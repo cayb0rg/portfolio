@@ -1,0 +1,77 @@
+/** Header **/
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  margin: auto 0;
+}
+
+.menu-icon svg {
+  fill: rgb(0,0,0,0);
+  stroke: black;
+  overflow: visible; /** Prevents icon from getting cropped **/
+}
+
+.menu-icon:hover {
+  cursor: pointer;
+}
+
+#menu-rect-horizontal, #menu-rect-vertical {
+  text-align: center;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: transform 1s;
+}
+/** Opening animation **/
+.menu-icon-open #menu-rect-horizontal {
+  animation-name: horizontal-to-x;
+  animation-duration: 1s;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 1s;
+}
+
+.menu-icon-open #menu-rect-vertical {
+  animation-name: vertical-to-x;
+  animation-duration: 1s;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 1s;
+}
+
+@keyframes horizontal-to-x {
+  0% {
+    width: 100%;
+    x: 0;
+  }
+  50% {
+    width: 0%;
+    x: 50%;
+  }
+  100% {
+    width: 100%;
+    x: 0;
+  }
+}
+
+@keyframes vertical-to-x {
+  0% {
+    height: 100%;
+    y: 0;
+  }
+  50% {
+    height: 0%;
+    y: 50%;
+  }
+  100% {
+    height: 100%;
+    y: 0;
+  }
+}
+
+/** Projects **/
