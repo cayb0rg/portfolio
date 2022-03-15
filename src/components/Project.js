@@ -46,13 +46,25 @@ export default function Project() {
             </div>
             <div className="project-desc">
               <p>{project.description}</p>
-              <a href={project.url}>
-                <svg></svg>
+              <a class="button" href={project.url}>
                 Visit the website
+                <svg id="arrow" viewbox="0 0 20 8">
+                  <line x1="0" x2="20" y1="4" y2="4"/>
+                  <line x1="16" x2="20" y1="0" y2="4"/>
+                  <line x1="16" x2="20" y1="8" y2="4"/>
+                </svg>
               </a>
             </div>
           </div>
-          <button onClick={handleNextProject}>Next Project</button>
+          <button class="button next-project-btn" onClick={handleNextProject}>
+            Next Project
+            <svg id="arrow" viewbox="0 0 20 8">
+              <line x1="0" x2="20" y1="4" y2="4"/>
+              <line x1="16" x2="20" y1="0" y2="4"/>
+              <line x1="16" x2="20" y1="8" y2="4"/>
+            </svg>
+          </button>
+
         </div>
       }
     </div>

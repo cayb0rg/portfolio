@@ -34,7 +34,8 @@ export default function Home() {
     dragged.style.display = "block";
 
     // Navigate based on what is in drop zone
-    if (document.getElementById('subject').firstElementChild.id=="hey")
+    if (document.getElementById('subject').firstElementChild.id=="hey"
+    || document.getElementById('subject').firstElementChild.id=="i'm")
     {
       if (document.getElementById('predicate').firstElementChild.id=="cay")
         navigate("/about");

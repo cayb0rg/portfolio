@@ -49,9 +49,12 @@ body {
 
 .dropzone {
   min-height: 100px;
-  border: 1px solid white;
-  border-radius: 5px;
   width: 100%;
+  border: 1px solid rgb(0,0,0,0);
+}
+
+.dropzone:hover {
+  border: 1px solid white;
 }
 
 .reactivezone {
@@ -192,6 +195,8 @@ main {
 /** Menu **/
 .menu {
   font-size: 36px;
+  max-width: 700px;
+  margin: auto;
   -webkit-text-fill-color: rgb(0,0,0,0);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
@@ -262,4 +267,33 @@ main {
 
 .dark-mode circle {
   fill: white;
+}
+
+.dark-mode .menu > * {
+  border-color: white;
+}
+
+.button {
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  text-align: right;
+  border-bottom: 1px solid rgb(0,0,0,0);
+}
+
+.button:hover {
+  border-color: white;
+  cursor: pointer;
+}
+
+#arrow {
+  width: 20px;
+  height: 8px;
+  padding-left: 1em;
+}
+
+.next-project-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
