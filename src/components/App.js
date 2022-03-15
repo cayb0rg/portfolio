@@ -17,11 +17,16 @@ import NotFound from './NotFound.js';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [mode, setMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('isDarkMode'));
+
+  useEffect(() => {
+    localStorage.setItem('isDarkMode', isDarkMode);
+    document.getElementById('root').classList.toggle('dark-mode');
+  }, [isDarkMode]);
 
   return (
     <BrowserRouter>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} mode={mode} setMode={setMode}/>
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
       <main>
         {isMenuOpen ? <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/> :
           <Routes>

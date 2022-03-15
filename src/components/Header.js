@@ -7,7 +7,7 @@ export default function Header(props) {
   }
 
   function handleModeClick(e) {
-    props.setMode(!props.mode);
+    props.setIsDarkMode(!props.isDarkMode);
   }
 
   return (
@@ -22,7 +22,7 @@ export default function Header(props) {
         <div onClick={handleMenuClick} className={props.isMenuOpen ? "menu-icon menu-icon-open" : "menu-icon"}>
           <svg viewBox="0 0 30 30">
             <rect id="menu-rect-horizontal" y="10" width="30" height="10" rx="5"/>
-            <rect id="menu-rect-vertical" x="10" width="10" height="30" rx="5"/> 
+            <rect id="menu-rect-vertical" x="10" width="10" height="30" rx="5"/>
           </svg>
         </div>
       </div>
