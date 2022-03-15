@@ -100,6 +100,15 @@ header {
   transform: scale(1.1);
 }
 
+#moon-dark {
+  fill: rgb(50,50,50);
+  stroke: rgb(50,50,50);
+}
+#moon-shadow {
+  fill: rgb(255,255,255);
+  stroke: rgb(255,255,255);
+}
+
 #menu-rect-horizontal, #menu-rect-vertical {
   text-align: center;
   transform: rotate(-90deg);
@@ -175,7 +184,7 @@ main {
 
 .list > *:hover{
   transform: scale(1.1);
-  transform-origin: left center;
+  transform-origin: left top;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -190,6 +199,7 @@ main {
 
 .menu > * {
   padding: 0.5em;
+  border-bottom: 1px solid black;
 }
 
 /** Projects Page **/
