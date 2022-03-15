@@ -16,7 +16,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/',
+    publicPath: '/'
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -42,11 +42,23 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        use: 'asset/resource',
+        use: [
+          {
+            loader: 'file-loader',
+          }
+        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: "[name].[contenthash].[ext]",
+              output: '/fonts'
+            }
+          }
+        ]
       },
     ]
   }

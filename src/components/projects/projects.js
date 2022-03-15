@@ -5,7 +5,8 @@ const projects = [
     categories: ["Web Development", "Graphic Design"],
     year: "2019",
     description: "Description",
-    url: "https://henningdraincleaning.com"
+    url: "https://henningdraincleaning.com",
+    nextProject: "stratagem"
   },
   {
     param: "stratagem",
@@ -13,7 +14,8 @@ const projects = [
     categories: ["Web Development", "Illustration"],
     year: "2020",
     description: "Description",
-    url: "#"
+    url: "#",
+    nextProject: "libgen-api"
   },
   {
     param: "libgen-api",
@@ -21,7 +23,17 @@ const projects = [
     categories: ["Web Development"],
     year: "2020",
     description: "Description",
-    url: "#"
+    url: "#",
+    nextProject: "camper"
+  },
+  {
+    param: "camper",
+    name: "Camper Animation",
+    categories: ["Adobe Illustrator", "GSAP", "HTML5", "CSS3"],
+    year: "2020",
+    description: "Description",
+    url: "#",
+    nextProject: "drain-cleaning"
   }
 ]
 

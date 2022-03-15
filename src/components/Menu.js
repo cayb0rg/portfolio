@@ -8,11 +8,15 @@ export default function Menu(props) {
   }
 
   return (
-    <nav>
-      <Link to="/" onClick={handleOnClick}>home</Link>
-      <Link to="/projects" onClick={handleOnClick}>projects</Link>
-      <Link to="/about" onClick={handleOnClick}>about</Link>
-      <Link to="/contact" onClick={handleOnClick}>contact</Link>
-    </nav>
+    <div>
+      <h1>menu</h1>
+      <nav className="list">
+        <Link to="/" onClick={handleOnClick}>home</Link>
+        <Link to="/projects" onClick={handleOnClick}>projects</Link>
+        <Link to="/about" onClick={handleOnClick}>about</Link>
+        <Link to="/contact" onClick={handleOnClick}>contact</Link>
+      </nav>
+    </div>
+
   )
 }

@@ -1,3 +1,29 @@
+/** Global properties **/
+
+@font-face {
+  font-family: 'League Spartan';
+  src: url('./fonts/LeagueSpartan-Regular.ttf', format: 'ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: 'League Spartan', sans-serif;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.light-mode {
+  background-color: rgb(0,0,0,0.1);
+}
+
+.dark-mode {
+  background-color: rgb(0,0,0,0.8);
+}
+
 /** Header **/
 header {
   display: flex;
@@ -5,10 +31,20 @@ header {
   justify-content: space-between;
 }
 
+.tools {
+  display: flex;
+  flex-direction: row;
+}
+
+.tools > * {
+  padding: 0 1em;
+}
+
 .menu-icon {
   width: 50px;
   height: 50px;
   margin: auto 0;
+  transition: transform 0.2s;
 }
 
 .menu-icon svg {
@@ -19,6 +55,7 @@ header {
 
 .menu-icon:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 #menu-rect-horizontal, #menu-rect-vertical {
@@ -27,6 +64,7 @@ header {
   transform-origin: center;
   transition: transform 1s;
 }
+
 /** Opening animation **/
 .menu-icon-open #menu-rect-horizontal {
   animation-name: horizontal-to-x;
@@ -74,4 +112,69 @@ header {
   }
 }
 
-/** Projects **/
+/** Main **/
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/** Lists **/
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.list > * {
+  padding: 2em;
+  transition: transform .2s;
+  transform-origin: left center;
+}
+
+.list > *:hover{
+  transform: scale(1.1);
+  transform-origin: left center;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/** Projects Page **/
+.projects-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.projects-img {
+  max-width: 500px;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .projects-container {
+    display: block;
+  }
+  .projects-img {
+    display: none;
+  }
+}
+
+/** Project Page **/
+.project-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+  width: 100%;
+}
+
+.project-details > * {
+  width: 100%;
+}
+
+.project-desc {
+
+}

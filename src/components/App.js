@@ -17,20 +17,24 @@ import NotFound from './NotFound.js';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mode, setMode] = useState(false);
 
   return (
     <BrowserRouter>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-      {isMenuOpen ? <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/> :
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/projects" element={<Projects />}/>
-          <Route path="/projects/:name" element={<Project/>}/>
-          <Route path="/about" element={<About />}/>
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-      }
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} mode={mode} setMode={setMode}/>
+      <main>
+        {isMenuOpen ? <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/> :
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/projects" element={<Projects />}/>
+            <Route path="/projects/:name" element={<Project/>}/>
+            <Route path="/about" element={<About />}/>
+            <Route path="/contact" element={<Contact />}/>
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+        }
+      </main>
+
     </BrowserRouter>
   )
 }
