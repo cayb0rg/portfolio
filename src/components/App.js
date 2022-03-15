@@ -20,6 +20,7 @@ export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('isDarkMode'));
 
   useEffect(() => {
+    console.log(isDarkMode);
     localStorage.setItem('isDarkMode', isDarkMode);
     document.getElementById('root').classList.toggle('dark-mode');
   }, [isDarkMode]);

@@ -7,6 +7,10 @@
   font-style: normal;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 * {
   font-family: 'League Spartan', sans-serif;
   text-decoration: none;
@@ -25,16 +29,6 @@ body {
   width: 100%;
 }
 
-.dark-mode, .dark-mode * {
-  color: rgb(255,255,255);
-  background-color: rgb(50,50,50);
-}
-
-.dark-mode .title {
-  -webkit-text-fill-color: rgb(0,0,0,0);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-}
 
 /** Home **/
 .dragOver {
@@ -75,6 +69,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .tools {
@@ -184,6 +180,18 @@ main {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/** Menu **/
+.menu {
+  font-size: 36px;
+  -webkit-text-fill-color: rgb(0,0,0,0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.menu > * {
+  padding: 0.5em;
+}
+
 /** Projects Page **/
 .projects-container {
   display: flex;
@@ -223,4 +231,25 @@ main {
 
 .project-desc {
 
+}
+
+/** Dark Mode **/
+
+.dark-mode, .dark-mode * {
+  color: rgb(255,255,255);
+  background-color: rgb(50,50,50);
+}
+
+.dark-mode .title, .dark-mode .menu {
+  -webkit-text-fill-color: rgb(0,0,0,0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+.dark-mode svg {
+  stroke: white;
+}
+
+.dark-mode circle {
+  fill: white;
 }

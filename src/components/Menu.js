@@ -9,8 +9,7 @@ export default function Menu(props) {
 
   return (
     <div>
-      <h1>menu</h1>
-      <nav className="list">
+      <nav className="list menu">
         <Link to="/" onClick={handleOnClick}>home</Link>
         <Link to="/projects" onClick={handleOnClick}>projects</Link>
         <Link to="/about" onClick={handleOnClick}>about</Link>
