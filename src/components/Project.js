@@ -6,6 +6,7 @@ export default function Project() {
 
   let { name } = useParams();
   const [project, setProject] = useState({});
+  const [isHovering, setIsHovering] = useState(false);
 
   function handleSetProject(projectName) {
     const obj = projects.find(obj => obj.param == projectName);
@@ -26,45 +27,55 @@ export default function Project() {
     handleSetProject(project.nextProject);
   }
 
+  function handleOnMouseEnter() {
+    setIsHovering(true);
+  }
+
+  function handleOnMouseLeave() {
+    setIsHovering(false);
+  }
+
   return (
     <div>
       {project &&
-        <div>
-          <h1>{project.name}</h1>
+        <div className="project-container">
+          <div className="project-header">
+            <h1>{project.name}</h1>
+          </div>
           <div className="project-info">
             <div className="project-details">
               <div className="project-categories">
-                <h2>Category</h2>
+                <h2>category</h2>
                 <ul>
                   {project.categories}
                 </ul>
               </div>
               <div className="project-year">
-                <h2>Year</h2>
+                <h2>year</h2>
                 <p>{project.year}</p>
               </div>
             </div>
             <div className="project-desc">
               <p>{project.description}</p>
-              <a class="button" href={project.url}>
-                Visit the website
-                <svg id="arrow" viewbox="0 0 20 8">
+              <a className="button" href={project.url}>
+                visit the website
+                <svg id="project-next-arrow" viewbox="0 0 20 8">
                   <line x1="0" x2="20" y1="4" y2="4"/>
                   <line x1="16" x2="20" y1="0" y2="4"/>
                   <line x1="16" x2="20" y1="8" y2="4"/>
                 </svg>
               </a>
+              <button className="button next-project-btn" onClick={handleNextProject}
+                onMouseOver={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
+                {isHovering ? <p>{project.nextProject}</p>: <p>next project</p>}
+                <svg id="project-next-arrow" className="arrow" viewbox="0 0 20 8">
+                  <line x1="0" x2="20" y1="4" y2="4"/>
+                  <line x1="16" x2="20" y1="0" y2="4"/>
+                  <line x1="16" x2="20" y1="8" y2="4"/>
+                </svg>
+              </button>
             </div>
           </div>
-          <button class="button next-project-btn" onClick={handleNextProject}>
-            Next Project
-            <svg id="arrow" viewbox="0 0 20 8">
-              <line x1="0" x2="20" y1="4" y2="4"/>
-              <line x1="16" x2="20" y1="0" y2="4"/>
-              <line x1="16" x2="20" y1="8" y2="4"/>
-            </svg>
-          </button>
-
         </div>
       }
     </div>

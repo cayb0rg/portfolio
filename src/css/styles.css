@@ -7,6 +7,11 @@
   font-style: normal;
 }
 
+:root {
+  --dark: rgb(50,50,50);
+  --light: rgb(230,230,230);
+}
+
 html {
   overflow-y: scroll;
 }
@@ -14,8 +19,9 @@ html {
 * {
   font-family: 'League Spartan', sans-serif;
   text-decoration: none;
-  color: rgb(50,50,50);
-  background-color: rgb(255,255,255);
+  color: var(--dark);
+  background-color: var(--light);
+  text-transform: lowercase;
 }
 
 body {
@@ -27,8 +33,38 @@ body {
   height: 100%;
   min-height: 100vh;
   width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
+.button {
+  font-size: 20px;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  width: 20px;
+  height: 8px;
+  stroke: rgb(50, 50, 50);
+}
+
+/** Main **/
+main {
+  width: 100%;
+}
+
+main * {
+  transform: translateY(-100px);
+}
+
+.load-main * {
+  transition: transform 2s;
+  transform: translateY(0);
+}
 
 /** Home **/
 .dragOver {
@@ -40,21 +76,10 @@ body {
   cursor: pointer;
 }
 
-.title {
-  font-size: 1.1em;
-  -webkit-text-fill-color: rgb(0,0,0,0);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-
 .dropzone {
-  min-height: 100px;
+  min-height: 50px;
   width: 100%;
-  border: 1px solid rgb(0,0,0,0);
-}
-
-.dropzone:hover {
-  border: 1px solid white;
+  box-sizing: border-box;
 }
 
 .reactivezone {
@@ -65,6 +90,46 @@ body {
 
 .reactivezone .dropzone {
   margin: 1em 0;
+  border: 1px dotted var(--dark);
+  padding: 1em;
+}
+
+.dark-mode .reactivezone .dropzone {
+  border-color: var(--light);
+}
+
+.draggable {
+  border: 1px solid rgb(0,0,0,0);
+}
+
+.draggable:hover {
+  border-color: 1px solid var(--dark);
+}
+
+.dark-mode .draggable:hover {
+  border-color: var(--light);
+}
+
+.reactivezone p {
+  font-size: 3em;
+  -webkit-text-fill-color: rgb(0,0,0,0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--dark);
+}
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 800px) {
+  .boxes, .reactivezone {
+    display:block;
+  }
+  .draggable {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 /** Header **/
@@ -94,7 +159,7 @@ header {
 
 .menu-icon svg {
   fill: rgb(0,0,0,0);
-  stroke: black;
+  stroke: var(--dark);
   overflow: visible; /** Prevents icon from getting cropped **/
 }
 
@@ -104,12 +169,12 @@ header {
 }
 
 #moon-dark {
-  fill: rgb(50,50,50);
-  stroke: rgb(50,50,50);
+  fill: var(--dark);
+  stroke: var(--dark);
 }
 #moon-shadow {
-  fill: rgb(255,255,255);
-  stroke: rgb(255,255,255);
+  fill: var(--light);
+  stroke: var(--light);
 }
 
 #menu-rect-horizontal, #menu-rect-vertical {
@@ -185,11 +250,10 @@ main {
   transform-origin: left center;
 }
 
-.list > *:hover{
+.projects-list > *:hover{
   transform: scale(1.1);
   transform-origin: left top;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /** Menu **/
@@ -197,15 +261,24 @@ main {
   font-size: 36px;
   max-width: 700px;
   margin: auto;
-  -webkit-text-fill-color: rgb(0,0,0,0);
+  -webkit-text-fill-color: var(--dark);
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--dark);
 }
 
 .menu > * {
   padding: 0.5em;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--dark);
 }
+
+#menu-arrow {
+  display: none;
+  padding-right: 1em;
+  width: 40px;
+  height: 16px;
+  vertical-align: middle;
+}
+
 
 /** Projects Page **/
 .projects-container {
@@ -220,14 +293,22 @@ main {
 
 @media (max-width: 800px) {
   .projects-container {
-    display: block;
+    flex-direction: column;
   }
   .projects-img {
     display: none;
   }
+  .projects-list {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 /** Project Page **/
+.project-container {
+
+}
+
 .project-info {
   display: flex;
   flex-direction: row;
@@ -240,60 +321,102 @@ main {
   width: 100%;
 }
 
+
 .project-details > * {
   width: 100%;
 }
 
-.project-desc {
+.project-main {
+  display: flex;
+  flex-direction: row;
+}
 
+.project-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-header h1 {
+  flex-grow: 3;
+}
+
+@media (max-width: 800px) {
+  .project-info, .project-details, .project-header {
+    flex-direction: column;
+  }
+}
+
+.next-project-btn {
+  flex-grow: 1;
+  text-align: right;
+  border-top: 1px solid var(--dark);
+  border-bottom: 1px solid rgb(0,0,0,0);
+}
+.dark-mode .next-project-btn {
+  border-top-color: var(--light);
+}
+
+.next-project-btn * {
+  display: inline-block;
+}
+
+.next-project-btn:hover {
+  border-color: var(--dark);
+}
+
+.dark-mode .next-project-btn:hover {
+  border-color: var(--light);
+}
+
+#project-next-arrow {
+  width: 20px;
+  height: 8px;
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.see-projects-btn {
+  border-bottom: 1px solid rgb(0,0,0,0);
+  margin-top: 1em;
+  padding-bottom: 1em;
+}
+
+.see-projects-btn:hover {
+  border-color: var(--dark);
+}
+
+.dark-mode .see-projects-btn:hover {
+  border-color: var(--light);
 }
 
 /** Dark Mode **/
 
 .dark-mode, .dark-mode * {
-  color: rgb(255,255,255);
+  color: var(--light);
   background-color: rgb(50,50,50);
 }
 
-.dark-mode .title, .dark-mode .menu {
-  -webkit-text-fill-color: rgb(0,0,0,0);
+.dark-mode .reactivezone p, .dark-mode .menu {
+  -webkit-text-stroke-color: var(--light);
+  -webkit-text-fill-color: var(--dark);
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
 }
 
 .dark-mode svg {
-  stroke: white;
+  stroke: var(--light);
 }
 
 .dark-mode circle {
-  fill: white;
+  fill: var(--light);
 }
 
 .dark-mode .menu > * {
-  border-color: white;
-}
-
-.button {
-  border: none;
-  font-size: 20px;
-  width: 100%;
-  text-align: right;
-  border-bottom: 1px solid rgb(0,0,0,0);
-}
-
-.button:hover {
-  border-color: white;
-  cursor: pointer;
-}
-
-#arrow {
-  width: 20px;
-  height: 8px;
-  padding-left: 1em;
-}
-
-.next-project-btn {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
+  border-color: var(--light);
 }

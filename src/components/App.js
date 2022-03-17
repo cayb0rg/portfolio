@@ -24,10 +24,14 @@ export default function App() {
     document.getElementById('root').classList.toggle('dark-mode');
   }, [isDarkMode]);
 
+  useEffect(() => {
+    document.getElementById('main').classList.add('load-main');
+  }, []);
+
   return (
     <BrowserRouter>
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
-      <main>
+      <main id="main">
         {isMenuOpen ? <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/> :
           <Routes>
             <Route path="/" element={<Home/>}/>

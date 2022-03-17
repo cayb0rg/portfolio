@@ -1,7 +1,7 @@
 const projects = [
   {
     param: "drain-cleaning",
-    name: "Henning Drain Cleaning",
+    name: "henning drain cleaning",
     categories: ["Web Development", "Graphic Design"],
     year: "2019",
     description: "Description",
@@ -10,7 +10,7 @@ const projects = [
   },
   {
     param: "stratagem",
-    name: "Stratagem",
+    name: "stratagem",
     categories: ["Web Development", "Illustration"],
     year: "2020",
     description: "Description",
@@ -19,7 +19,7 @@ const projects = [
   },
   {
     param: "libgen-api",
-    name: "Library Genesis Search Tool",
+    name: "library genesis search tool",
     categories: ["Web Development"],
     year: "2020",
     description: "Description",
