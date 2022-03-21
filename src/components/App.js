@@ -17,11 +17,12 @@ import NotFound from './NotFound.js';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('isDarkMode'));
+  const [isDarkMode, setIsDarkMode] = useState(JSON.parse(localStorage.getItem('isDarkMode')));
 
   useEffect(() => {
-    window.localStorage.setItem('isDarkMode', isDarkMode);
-    document.getElementById('root').classList.toggle('dark-mode');
+    localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
+    if (isDarkMode) document.getElementById('root').classList.add('dark-mode');
+    if (!isDarkMode) document.getElementById('root').classList.remove('dark-mode');
   }, [isDarkMode]);
 
   useEffect(() => {
