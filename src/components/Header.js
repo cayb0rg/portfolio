@@ -4,6 +4,16 @@ export default function Header(props) {
 
   function handleMenuClick(e) {
     props.setIsMenuOpen(!props.isMenuOpen);
+    if (props.isMenuOpen)
+    {
+      document.getElementById('menu-icon').classList.add('menu-icon-close');
+        document.getElementById('menu-icon').classList.remove('menu-icon-open');
+    }
+    else {
+      document.getElementById('menu-icon').classList.add('menu-icon-open');
+        document.getElementById('menu-icon').classList.remove('menu-icon-close');
+    }
+
   }
 
   function handleModeClick(e) {
@@ -18,7 +28,7 @@ export default function Header(props) {
         </a>
       </div>
       <div className="tools">
-        <div onClick={handleModeClick} className={props.isDarkMode ? "menu-icon dark-mode-icon-on" : "menu-icon"}>
+        <div onClick={handleModeClick} className={props.isDarkMode ? "tool-icon dark-mode-icon-on" : "tool-icon"}>
           {!props.isDarkMode ?
             <svg viewBox="0 0 30 30" id="darkmodeicon">
               <circle id="moon-dark" r="5" cx="15" cy="15"/>
@@ -42,7 +52,7 @@ export default function Header(props) {
           }
 
         </div>
-        <div onClick={handleMenuClick} className={props.isMenuOpen ? "menu-icon menu-icon-open" : "menu-icon"}>
+        <div onClick={handleMenuClick} id="menu-icon" className="tool-icon">
           <svg viewBox="0 0 30 30">
             <rect id="menu-rect-horizontal" y="10" width="30" height="10" rx="5"/>
             <rect id="menu-rect-vertical" x="10" width="10" height="30" rx="5"/>
