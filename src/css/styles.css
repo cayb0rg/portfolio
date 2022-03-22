@@ -73,7 +73,11 @@ main * {
 
 .draggable {
   padding: 1em;
-  cursor: pointer;
+  cursor: grab;
+}
+
+.draggable:active {
+  cursor: grabbing;
 }
 
 .dropzone {
@@ -146,24 +150,21 @@ header {
   flex-direction: row;
 }
 
-.tools > * {
+.tool-icon {
   padding: 0 1em;
-}
-
-.menu-icon {
   width: 50px;
   height: 50px;
   margin: auto 0;
   transition: transform 0.2s;
 }
 
-.menu-icon svg {
+.tool-icon svg {
   fill: rgb(0,0,0,0);
   stroke: var(--dark);
   overflow: visible; /** Prevents icon from getting cropped **/
 }
 
-.menu-icon:hover {
+.tool-icon:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -177,8 +178,22 @@ header {
   stroke: var(--light);
 }
 
-#menu-rect-horizontal, #menu-rect-vertical {
-  text-align: center;
+.menu-icon-close #menu-rect-horizontal {
+  /* text-align: center;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: transform 1s; */
+
+  animation-name: x-to-horizontal;
+  animation-duration: 1s;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: transform 1s;
+}
+
+.menu-icon-close #menu-rect-vertical {
+  animation-name: x-to-vertical;
+  animation-duration: 1s;
   transform: rotate(-90deg);
   transform-origin: center;
   transition: transform 1s;
@@ -217,6 +232,36 @@ header {
 }
 
 @keyframes vertical-to-x {
+  0% {
+    height: 100%;
+    y: 0;
+  }
+  50% {
+    height: 0%;
+    y: 50%;
+  }
+  100% {
+    height: 100%;
+    y: 0;
+  }
+}
+/** Same as above keyframes **/
+@keyframes x-to-horizontal {
+  0% {
+    width: 100%;
+    x: 0;
+  }
+  50% {
+    width: 0%;
+    x: 50%;
+  }
+  100% {
+    width: 100%;
+    x: 0;
+  }
+}
+
+@keyframes x-to-vertical {
   0% {
     height: 100%;
     y: 0;
@@ -284,11 +329,12 @@ main {
 .projects-container {
   display: flex;
   flex-direction: row;
+  padding-left: 30px;
 }
 
 .projects-img {
-  max-width: 500px;
-  width: 100%;
+  max-width: 400px;
+  height: 100%;
 }
 
 @media (max-width: 800px) {

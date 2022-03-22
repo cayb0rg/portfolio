@@ -33,6 +33,15 @@ const projects = [
     year: "2020",
     description: "Description",
     url: "#",
+    nextProject: "tic-tac-toe"
+  },
+  {
+    param: "tic-tac-toe",
+    name: "Tic Tac Toe",
+    categories: ["JavaScript", "HTML5", "CSS3"],
+    year: "2019",
+    description: "Description",
+    url: "#",
     nextProject: "drain-cleaning"
   }
 ]
