@@ -36,7 +36,7 @@ export default function Project() {
   }
 
   return (
-    <div>
+    <div className="project-page">
       {project &&
         <div className="project-container">
           <div className="project-header">
@@ -65,19 +65,19 @@ export default function Project() {
                   <line x1="16" x2="20" y1="8" y2="4"/>
                 </svg>
               </a>
-              <button className="button next-project-btn" onClick={handleNextProject}
-                onMouseOver={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
-                {isHovering ? <p>{project.nextProject}</p>: <p>next project</p>}
-                <svg id="project-next-arrow" className="arrow" viewbox="0 0 20 8">
-                  <line x1="0" x2="20" y1="4" y2="4"/>
-                  <line x1="16" x2="20" y1="0" y2="4"/>
-                  <line x1="16" x2="20" y1="8" y2="4"/>
-                </svg>
-              </button>
             </div>
           </div>
         </div>
       }
+      <button className="button next-project-btn" onClick={handleNextProject}
+        onMouseOver={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
+        {isHovering ? <p>{project.nextProject}</p>: <p>next project</p>}
+        <svg id="project-next-arrow" className="arrow" viewbox="0 0 20 8">
+          <line x1="0" x2="20" y1="4" y2="4"/>
+          <line x1="16" x2="20" y1="0" y2="4"/>
+          <line x1="16" x2="20" y1="8" y2="4"/>
+        </svg>
+      </button>
     </div>
 
   )

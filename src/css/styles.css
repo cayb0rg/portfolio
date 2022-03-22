@@ -49,12 +49,13 @@ body {
 .arrow {
   width: 20px;
   height: 8px;
-  stroke: rgb(50, 50, 50);
+  stroke: var(--dark);
 }
 
 /** Main **/
 main {
   width: 100%;
+  height: 100%;
 }
 
 main * {
@@ -121,6 +122,12 @@ main * {
   -webkit-text-stroke-color: var(--dark);
 }
 
+.dark-mode .reactivezone p, .dark-mode #cay {
+  -webkit-text-stroke-color: var(--light);
+  -webkit-text-fill-color: var(--dark);
+  -webkit-text-stroke-width: 1px;
+}
+
 .boxes {
   display: flex;
   flex-direction: row;
@@ -179,11 +186,6 @@ header {
 }
 
 .menu-icon-close #menu-rect-horizontal {
-  /* text-align: center;
-  transform: rotate(-90deg);
-  transform-origin: center;
-  transition: transform 1s; */
-
   animation-name: x-to-horizontal;
   animation-duration: 1s;
   transform: rotate(-90deg);
@@ -287,18 +289,35 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: 36px;
+  margin: auto;
+  -webkit-text-fill-color: var(--dark);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--dark);
+}
+
+.dark-mode .list {
+  -webkit-text-stroke-color: var(--light);
+  -webkit-text-fill-color: var(--dark);
 }
 
 .list > * {
-  padding: 2em;
-  transition: transform .2s;
+  transition: transform .4s;
   transform-origin: left center;
+  padding: 0.5em;
+  border-bottom: 1px solid var(--dark);
 }
 
-.projects-list > *:hover{
-  transform: scale(1.1);
-  transform-origin: left top;
-  overflow: hidden;
+.dark-mode .list > * {
+  border-color: var(--light);
+}
+
+.list > *:hover {
+  transform: translateX(10px);
+}
+
+.projects-list {
+  margin: 0;
 }
 
 /** Menu **/
@@ -306,14 +325,6 @@ main {
   font-size: 36px;
   max-width: 700px;
   margin: auto;
-  -webkit-text-fill-color: var(--dark);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--dark);
-}
-
-.menu > * {
-  padding: 0.5em;
-  border-bottom: 1px solid var(--dark);
 }
 
 #menu-arrow {
@@ -323,7 +334,6 @@ main {
   height: 16px;
   vertical-align: middle;
 }
-
 
 /** Projects Page **/
 .projects-container {
@@ -351,8 +361,8 @@ main {
 }
 
 /** Project Page **/
-.project-container {
-
+.project-page {
+  height: 100%;
 }
 
 .project-info {
@@ -393,18 +403,14 @@ main {
   flex-grow: 3;
 }
 
-@media (max-width: 800px) {
-  .project-info, .project-details, .project-header {
-    flex-direction: column;
-  }
-}
-
 .next-project-btn {
-  flex-grow: 1;
   text-align: right;
   border-top: 1px solid var(--dark);
   border-bottom: 1px solid rgb(0,0,0,0);
+  width: 100%;
+  margin-top: 10px;
 }
+
 .dark-mode .next-project-btn {
   border-top-color: var(--light);
 }
@@ -413,11 +419,11 @@ main {
   display: inline-block;
 }
 
-.next-project-btn:hover {
+.next-project-btn:hover, .see-projects-btn:hover {
   border-color: var(--dark);
 }
 
-.dark-mode .next-project-btn:hover {
+.dark-mode .next-project-btn:hover, .dark-mode .see-projects-btn:hover {
   border-color: var(--light);
 }
 
@@ -426,20 +432,36 @@ main {
   height: 8px;
   padding-left: 10px;
   vertical-align: middle;
+  transition: transform 0.2s;
+  transform-origin: left center;
+  stroke: var(--dark);
 }
+
+/* .next-project-btn:hover #project-next-arrow {
+  transition: transform 0.2s;
+  transform: scale(1.5);
+  transform-origin: left center;
+} */
 
 .see-projects-btn {
   border-bottom: 1px solid rgb(0,0,0,0);
   margin-top: 1em;
   padding-bottom: 1em;
+  width: 100%;
+  display: inline-block;
 }
 
-.see-projects-btn:hover {
-  border-color: var(--dark);
+.see-projects-btn * {
 }
 
-.dark-mode .see-projects-btn:hover {
-  border-color: var(--light);
+@media (max-width: 800px) {
+  .project-info, .project-details, .project-header {
+    flex-direction: column;
+  }
+  .next-project-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
 /** Dark Mode **/
@@ -449,20 +471,10 @@ main {
   background-color: rgb(50,50,50);
 }
 
-.dark-mode .reactivezone p, .dark-mode .menu {
-  -webkit-text-stroke-color: var(--light);
-  -webkit-text-fill-color: var(--dark);
-  -webkit-text-stroke-width: 1px;
-}
-
 .dark-mode svg {
-  stroke: var(--light);
+  stroke: var(--light) !important;
 }
 
 .dark-mode circle {
   fill: var(--light);
-}
-
-.dark-mode .menu > * {
-  border-color: var(--light);
 }

@@ -31,8 +31,8 @@ export default function Header(props) {
         <div onClick={handleModeClick} className={props.isDarkMode ? "tool-icon dark-mode-icon-on" : "tool-icon"}>
           {!props.isDarkMode ?
             <svg viewBox="0 0 30 30" id="darkmodeicon">
-              <circle id="moon-dark" r="5" cx="15" cy="15"/>
-              <circle id="moon-shadow" r="5" cx="18" cy="13"/>
+              <circle id="moon-dark" r="4" cx="15" cy="15"/>
+              <circle id="moon-shadow" r="4" cx="18" cy="13"/>
             </svg>
             :
             <svg viewBox="0 0 30 30" id="lightmodeicon">

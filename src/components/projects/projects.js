@@ -6,15 +6,15 @@ const projects = [
     year: "2019",
     description: "Description",
     url: "https://henningdraincleaning.com",
-    nextProject: "stratagem"
+    nextProject: "to-do-list"
   },
   {
-    param: "stratagem",
-    name: "stratagem",
+    param: "to-do-list",
+    name: "to do list",
     categories: ["Web Development", "Illustration"],
     year: "2020",
     description: "Description",
-    url: "#",
+    url: "https://stratagem-to-do-list.herokuapp.com",
     nextProject: "libgen-api"
   },
   {

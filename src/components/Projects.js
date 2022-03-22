@@ -33,7 +33,7 @@ export default function Projects() {
       <div className="projects-container">
         <img src={imageSrc} className="projects-img"></img>
         <ul className="list projects-list">
-          
+
           <Link to="/projects/drain-cleaning" onMouseOver={() => onProjectHover(henningImg)}
             onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
               <svg id="menu-arrow" className="arrow" viewBox="0 0 22 9">
@@ -52,7 +52,7 @@ export default function Projects() {
               </svg>
               Camper
             </Link>
-          <Link to="/projects/stratagem" onMouseOver={() => onProjectHover(stratagemImg)}
+          <Link to="/projects/to-do-list" onMouseOver={() => onProjectHover(stratagemImg)}
             onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
               <svg id="menu-arrow" className="arrow" viewBox="0 0 22 9">
                 <line x1="0" x2="20" y1="4" y2="4"/>
