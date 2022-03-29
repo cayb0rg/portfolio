@@ -4,7 +4,7 @@ export default function RepoCard(props) {
 
   return (
     <div className="repoCard">
-      <h2><a href={props.repo.url}>{props.repo.name}</a></h2>
+      <h2><a href={props.repo.svn_url} target="_blank">{props.repo.name}</a></h2>
       <p>{props.repo.description}</p>
 
       <p>

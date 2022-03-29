@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import projects from './projects/projects.js';
+import henningImg from '/src/assets/images/henning.png';
 
 export default function Project() {
 
@@ -57,7 +58,7 @@ export default function Project() {
             </div>
             <div className="project-desc">
               <p>{project.description}</p>
-              <a className="button" href={project.url}>
+              <a href={project.url}>
                 visit the website
                 <svg id="project-next-arrow" viewbox="0 0 20 8">
                   <line x1="0" x2="20" y1="4" y2="4"/>
@@ -66,6 +67,9 @@ export default function Project() {
                 </svg>
               </a>
             </div>
+          </div>
+          <div className="photos">
+            {project.images ? project.images.map(img => <img src={img}/>) : <></>}
           </div>
         </div>
       }
