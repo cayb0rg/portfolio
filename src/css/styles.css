@@ -91,7 +91,7 @@ main * {
 }
 
 /** Home **/
-.home-container, .project-container {
+.home-container, .project-container, .about-container {
   max-width: 1000px;
   margin: auto;
 }
