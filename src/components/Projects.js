@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import camperImg from '/src/assets/images/camper.png';
 import henningImg from '/src/assets/images/henning.png';
@@ -6,7 +6,7 @@ import stratagemImg from '/src/assets/images/stratagem.png';
 import libgenImg from '/src/assets/images/libgen.png';
 import projects from './projects/projects.js';
 
-export default function Projects() {
+export default function Projects(props) {
 
   const [imageSrc, setImageSrc] = useState(henningImg);
 
@@ -33,7 +33,6 @@ export default function Projects() {
       <div className="projects-container">
         <img src={imageSrc} className="projects-img"></img>
         <ul className="list projects-list">
-
           <Link to="/projects/drain-cleaning" onMouseOver={() => onProjectHover(henningImg)}
             onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
               <svg id="menu-arrow" className="arrow" viewBox="0 0 22 9">

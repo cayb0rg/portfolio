@@ -12,6 +12,11 @@
   --light: rgb(230,230,230);
 }
 
+.dark-mode :root {
+  --light: rgb(50,50,50);
+  --dark: rgb(230,230,230);
+}
+
 html {
   overflow-y: scroll;
 }
@@ -22,6 +27,18 @@ html {
   color: var(--dark);
   background-color: var(--light);
   text-transform: lowercase;
+}
+
+a {
+  border-bottom: 1px solid rgb(0,0,0,0);
+}
+
+a:hover {
+  border-color: var(--dark);
+}
+
+.dark-mode a:hover {
+  border-color: var(--light);
 }
 
 body {
@@ -462,6 +479,41 @@ main {
     width: 100%;
     margin-top: 10px;
   }
+}
+
+/** Repo Cards **/
+.repos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.repoCard {
+  border: 1px solid rgb(0,0,0,0.5);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  flex-grow: 1;
+}
+
+.languageBlob {
+  width: 12px;
+  height: 12px;
+}
+
+.colorJavaScript {
+  stroke: yellow;
+  fill: yellow;
+}
+
+.colorHTML {
+  stroke: red;
+  fill: red;
+}
+
+.colorCSS {
+  stroke: pink;
+  fill: pink;
 }
 
 /** Dark Mode **/

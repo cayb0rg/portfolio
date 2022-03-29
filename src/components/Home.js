@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-export default function Home() {
+// Components
+import RepoCard from './RepoCard.js';
+
+export default function Home(props) {
   let navigate = useNavigate();
 
   const [dragged, setDragged] = useState(null);
@@ -46,6 +49,24 @@ export default function Home() {
     }
   }
 
+  function Repositories() {
+    if (!props.isLoading && props.repos) {
+      console.log(props.repos);
+      return (
+        <div className="repos">
+          {props.repos.map((repo, i) =>
+            <RepoCard key={i} repo={repo}></RepoCard>
+          )}
+        </div>
+      )
+    }
+    else {
+      return (
+        <></>
+      )
+    }
+  }
+
   return (
     <div>
       <div className="home-container">
@@ -87,7 +108,8 @@ export default function Home() {
               <p>learning software development and graphic design</p>
             </div>
           </div>
-        </div><Link to="/projects" className="see-projects-btn button">
+        </div>
+        <Link to="/projects" className="see-projects-btn button">
           see my projects
           <svg id="project-next-arrow" className="arrow" viewbox="0 0 20 8">
             <line x1="0" x2="20" y1="4" y2="4"/>
@@ -95,6 +117,7 @@ export default function Home() {
             <line x1="16" x2="20" y1="8" y2="4"/>
           </svg>
         </Link>
+        <Repositories/>
       </div>
     </div>
   )
