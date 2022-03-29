@@ -45,7 +45,7 @@ const projects = [
   },
   {
     param: "camper",
-    name: "Camper Animation",
+    name: "Camper",
     categories: ["Adobe Illustrator", "GSAP", "HTML5", "CSS3"],
     year: "2020",
     description: "Description",

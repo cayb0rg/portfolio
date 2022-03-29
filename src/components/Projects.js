@@ -10,9 +10,15 @@ export default function Projects(props) {
 
   const [imageSrc, setImageSrc] = useState(henningImg);
 
+  useEffect(() => {
+    document.querySelector(".projects-left").style.backgroundImage = `url(${imageSrc})`;
+  }, [])
+
   function onProjectHover(src) {
     // Change image
     setImageSrc(src);
+    document.querySelector(".projects-left").style.backgroundImage = `url(${src})`;
+    document.querySelector(".projects-left").classList.add('opacity');
   }
 
   function handleOnMouseEnter(e) {
@@ -25,13 +31,15 @@ export default function Projects(props) {
       e.target = e.target.parentNode;
     }
     e.target.firstChild.style.display="none";
+    document.querySelector(".projects-left").classList.remove('opacity');
   }
 
   function ProjectsList() {
     return (
       <ul className="list projects-list">
+        <h1 className="projects-header">projects</h1>
         {projects.map(project =>
-          <Link to={"/projects/" + project.name} onMouseOver={() => onProjectHover(project.images[0])}
+          <Link to={"/projects/" + project.param} onMouseOver={() => onProjectHover(project.images[0])}
             onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
             <svg id="menu-arrow" className="arrow" viewBox="0 0 22 9">
               <line x1="0" x2="20" y1="4" y2="4"/>
@@ -47,9 +55,10 @@ export default function Projects(props) {
 
   return (
     <div>
-      <h1>projects</h1>
       <div className="projects-container">
-        <img src={imageSrc} className="projects-img"></img>
+        <div className="projects-left">
+
+        </div>
         <ProjectsList/>
       </div>
     </div>

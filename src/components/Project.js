@@ -11,8 +11,11 @@ export default function Project() {
 
   function handleSetProject(projectName) {
     const obj = projects.find(obj => obj.param == projectName);
-    obj.categories = obj.categories.map((category, i) => <li key={i}>{category}</li>);
-    setProject(obj);
+    if (obj)
+    {
+      obj.categories = obj.categories.map((category, i) => <li key={i}>{category}</li>);
+      setProject(obj);
+    }
   }
 
   useEffect(() => {

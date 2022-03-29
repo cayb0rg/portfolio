@@ -18,7 +18,13 @@
 }
 
 html {
+  overflow-x: hidden;
   overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 * {
@@ -85,6 +91,11 @@ main * {
 }
 
 /** Home **/
+.home-container, .project-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
 .dragOver {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -295,12 +306,6 @@ header {
   }
 }
 
-/** Main **/
-main {
-  max-width: 1000px;
-  margin: auto;
-}
-
 /** Lists **/
 .list {
   display: flex;
@@ -329,12 +334,14 @@ main {
   border-color: var(--light);
 }
 
-.list > *:hover {
+.list > *:hover:not(.projects-header) {
   transform: translateX(10px);
 }
 
 .projects-list {
   margin: 0;
+  max-width: 700px;
+  flex-grow: 1;
 }
 
 /** Menu **/
@@ -356,12 +363,28 @@ main {
 .projects-container {
   display: flex;
   flex-direction: row;
-  padding-left: 30px;
+  justify-content: center;
 }
 
-.projects-img {
-  max-width: 400px;
-  height: 100%;
+.projects-header {
+  font-size: 36px;
+}
+
+.projects-left {
+  min-width: 500px;
+  max-width: 700px;
+  text-align: left;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-grow: 1;
+  transform: translateX(-10px);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.opacity {
+  opacity: 1;
 }
 
 @media (max-width: 800px) {
@@ -418,6 +441,17 @@ main {
 
 .project-header h1 {
   flex-grow: 3;
+}
+
+.photos {
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.photos > * {
+  max-width: 1000px;
+  margin: auto;
 }
 
 .next-project-btn {
@@ -516,6 +550,7 @@ main {
   fill: pink;
 }
 
+
 /** Dark Mode **/
 
 .dark-mode, .dark-mode * {
@@ -523,10 +558,6 @@ main {
   background-color: rgb(50,50,50);
 }
 
-.dark-mode svg {
+.dark-mode svg:not(.languageBlob) {
   stroke: var(--light) !important;
-}
-
-.dark-mode circle {
-  fill: var(--light);
 }
