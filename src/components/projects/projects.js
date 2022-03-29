@@ -35,8 +35,12 @@ const projects = [
     categories: ["Adobe Illustrator", "GSAP", "HTML5", "CSS3"],
     year: "2020",
     description: "Description",
+<<<<<<< HEAD
     url: "https://cayb0rg.github.io/camper-animation/",
     github: "https://github.com/cayb0rg/camper-animation",
+=======
+    url: "#",
+>>>>>>> 3bada8be56c83e6e56b65ec996483a278856a91f
     nextProject: "tic-tac-toe"
   },
   {
@@ -45,8 +49,12 @@ const projects = [
     categories: ["JavaScript", "HTML5", "CSS3"],
     year: "2019",
     description: "Description",
+<<<<<<< HEAD
     url: "https://cayb0rg.github.io/tic-tac-toe/",
     github: "https://github.com/cayb0rg/tic-tac-toe",
+=======
+    url: "#",
+>>>>>>> 3bada8be56c83e6e56b65ec996483a278856a91f
     nextProject: "drain-cleaning"
   }
 ]

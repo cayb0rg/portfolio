@@ -33,6 +33,7 @@ export default function Projects(props) {
       <div className="projects-container">
         <img src={imageSrc} className="projects-img"></img>
         <ul className="list projects-list">
+
           <Link to="/projects/drain-cleaning" onMouseOver={() => onProjectHover(henningImg)}
             onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
               <svg id="menu-arrow" className="arrow" viewBox="0 0 22 9">

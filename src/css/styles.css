@@ -203,6 +203,11 @@ header {
 }
 
 .menu-icon-close #menu-rect-horizontal {
+  /* text-align: center;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: transform 1s; */
+
   animation-name: x-to-horizontal;
   animation-duration: 1s;
   transform: rotate(-90deg);
