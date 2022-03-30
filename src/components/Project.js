@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import projects from './projects/projects.js';
-import henningImg from '/src/assets/images/henning.png';
 
 import Arrow from './Arrow.js';
 

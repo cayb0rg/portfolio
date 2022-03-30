@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import camperImg from '/src/assets/images/camper.png';
-import henningImg from '/src/assets/images/henning.png';
-import stratagemImg from '/src/assets/images/stratagem.png';
-import libgenImg from '/src/assets/images/libgen.png';
 import projects from './projects/projects.js';
 
 // Components
