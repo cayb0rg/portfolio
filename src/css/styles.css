@@ -20,11 +20,6 @@
 html {
   overflow-x: hidden;
   overflow-y: scroll;
-  scrollbar-width: none;
-}
-
-::-webkit-scrollbar {
-  width: 0;
 }
 
 * {
@@ -91,7 +86,7 @@ main * {
 }
 
 /** Home **/
-.home-container, .project-container, .about-container {
+.container {
   max-width: 1000px;
   margin: auto;
 }
@@ -340,7 +335,7 @@ header {
 
 .projects-list {
   margin: 0;
-  max-width: 700px;
+  max-width: 500px;
   flex-grow: 1;
 }
 
@@ -351,7 +346,7 @@ header {
   margin: auto;
 }
 
-#menu-arrow {
+.menu-arrow {
   display: none;
   padding-right: 1em;
   width: 40px;
@@ -371,15 +366,15 @@ header {
 }
 
 .projects-left {
-  min-width: 500px;
-  max-width: 700px;
-  text-align: left;
-  background-position: top;
-  background-size: cover;
+  width: 100%;
+  height: 500px;
+  margin-top: 2em;
+  background-position: top center;
+  background-size: contain;
   background-repeat: no-repeat;
-  flex-grow: 1;
   transform: translateX(-10px);
   transition: opacity 0.5s ease-in-out;
+  flex-grow: 1;
   opacity: 0;
 }
 

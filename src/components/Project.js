@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import projects from './projects/projects.js';
 import henningImg from '/src/assets/images/henning.png';
+
+import Arrow from './Arrow.js';
 
 export default function Project() {
 
@@ -42,7 +44,7 @@ export default function Project() {
   return (
     <div className="project-page">
       {project &&
-        <div className="project-container">
+        <div className="project-container container">
           <div className="project-header">
             <h1>{project.name}</h1>
           </div>
@@ -63,27 +65,19 @@ export default function Project() {
               <p>{project.description}</p>
               <a href={project.url}>
                 visit the website
-                <svg id="project-next-arrow" viewbox="0 0 20 8">
-                  <line x1="0" x2="20" y1="4" y2="4"/>
-                  <line x1="16" x2="20" y1="0" y2="4"/>
-                  <line x1="16" x2="20" y1="8" y2="4"/>
-                </svg>
+                <Arrow id="project-next-arrow"/>
               </a>
             </div>
           </div>
           <div className="photos">
-            {project.images ? project.images.map(img => <img src={img}/>) : <></>}
+            {project.images ? project.images.map((img, i) => i > 0 ? <img src={img}/> : <></>) : <></>}
           </div>
         </div>
       }
       <button className="button next-project-btn" onClick={handleNextProject}
         onMouseOver={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
         {isHovering ? <p>{project.nextProject}</p>: <p>next project</p>}
-        <svg id="project-next-arrow" className="arrow" viewbox="0 0 20 8">
-          <line x1="0" x2="20" y1="4" y2="4"/>
-          <line x1="16" x2="20" y1="0" y2="4"/>
-          <line x1="16" x2="20" y1="8" y2="4"/>
-        </svg>
+        <Arrow id="project-next-arrow"/>
       </button>
     </div>
 

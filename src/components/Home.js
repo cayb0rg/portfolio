@@ -69,7 +69,7 @@ export default function Home(props) {
 
   return (
     <div>
-      <div className="home-container">
+      <div className="home-container container">
         <div className="reactivezone">
           <div id="subject" className="dropzone" onDragOver={handleOnDragOver} onDrop={handleOnDrop}>
             <div id="hey" className="draggable" draggable="true" onDragStart={handleOnDragStart}>

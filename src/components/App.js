@@ -34,6 +34,18 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    if (!isMenuOpen)
+    {
+      document.getElementById('menu-icon').classList.add('menu-icon-close');
+      document.getElementById('menu-icon').classList.remove('menu-icon-open');
+    }
+    else {
+      document.getElementById('menu-icon').classList.add('menu-icon-open');
+      document.getElementById('menu-icon').classList.remove('menu-icon-close');
+    }
+  }, [isMenuOpen])
+
+  useEffect(() => {
     fetchRepos();
   }, [])
 

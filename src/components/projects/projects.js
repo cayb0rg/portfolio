@@ -1,7 +1,9 @@
-import camperImg from '/src/assets/images/camper.png';
-import henningImg from '/src/assets/images/henning.png';
-import stratagemImg from '/src/assets/images/stratagem.png';
-import libgenImg from '/src/assets/images/libgen.png';
+import camper640 from '/src/assets/images/camper_640.png';
+import henning640 from '/src/assets/images/henning_640.png';
+import stratagem640 from '/src/assets/images/stratagem_640.png';
+import libgen640 from '/src/assets/images/libgen_640.png';
+import toDoList640 from '/src/assets/images/to_do_list_640.png';
+import ticTacToe640 from '/src/assets/images/tic_tac_toe_640.png';
 
 const projects = [
   {
@@ -12,7 +14,7 @@ const projects = [
     description: "A website I made using Node.js, Pug, HTML, and CSS for a client.",
     url: "https://henningdraincleaning.com",
     images: [
-      henningImg,
+      henning640
     ],
     github: null,
     nextProject: "to-do-list"
@@ -26,7 +28,7 @@ const projects = [
     url: "https://stratagem-to-do-list.herokuapp.com",
     github: "https://github.com/cayb0rg/to-do-list",
     images: [
-      henningImg,
+      toDoList640
     ],
     nextProject: "libgen-api"
   },
@@ -39,7 +41,7 @@ const projects = [
     url: "https://cayb0rg.github.io/libgen_api_implementation/",
     github: "https://github.com/cayb0rg/libgen_api_implementation",
     images: [
-      camperImg,
+      libgen640
     ],
     nextProject: "camper"
   },
@@ -52,7 +54,7 @@ const projects = [
     url: "https://cayb0rg.github.io/camper-animation/",
     github: "https://github.com/cayb0rg/camper-animation",
     images: [
-      camperImg,
+      camper640
     ],
     nextProject: "tic-tac-toe"
   },
@@ -65,7 +67,7 @@ const projects = [
     url: "https://cayb0rg.github.io/tic-tac-toe/",
     github: "https://github.com/cayb0rg/tic-tac-toe",
     images: [
-      henningImg,
+      ticTacToe640
     ],
     nextProject: "drain-cleaning"
   }

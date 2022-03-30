@@ -1,19 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function Header(props) {
 
   function handleMenuClick(e) {
     props.setIsMenuOpen(!props.isMenuOpen);
-    if (props.isMenuOpen)
-    {
-      document.getElementById('menu-icon').classList.add('menu-icon-close');
-        document.getElementById('menu-icon').classList.remove('menu-icon-open');
-    }
-    else {
-      document.getElementById('menu-icon').classList.add('menu-icon-open');
-        document.getElementById('menu-icon').classList.remove('menu-icon-close');
-    }
-
   }
 
   function handleModeClick(e) {
