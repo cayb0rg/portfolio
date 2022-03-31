@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const HOST = '127.0.0.1';
+const HOST = 'localhost';
 
 app.use(express.static(path.join(__dirname, '/dist')));
 
