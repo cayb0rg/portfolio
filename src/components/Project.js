@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
+import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
 import projects from './projects/projects.js';
 
 import Arrow from './Arrow.js';
@@ -7,6 +7,7 @@ import Arrow from './Arrow.js';
 export default function Project() {
 
   let { name } = useParams();
+  let navigate = useNavigate();
   const [project, setProject] = useState({});
   const [isHovering, setIsHovering] = useState(false);
 
@@ -30,6 +31,7 @@ export default function Project() {
   function handleNextProject(e) {
     e.preventDefault();
     handleSetProject(project.nextProject);
+    navigate("/projects/" + project.nextProject);
   }
 
   function handleOnMouseEnter() {
@@ -62,14 +64,14 @@ export default function Project() {
             </div>
             <div className="project-desc">
               <p>{project.description}</p>
-              <a href={project.url}>
+              <a href={project.url} target="_blank">
                 visit the website
                 <Arrow id="project-next-arrow"/>
               </a>
             </div>
           </div>
           <div className="photos">
-            {project.images ? project.images.map((img, i) => i > 0 ? <img src={img}/> : <></>) : <></>}
+            {project.images ? project.images.map((img, i) => i > 0 ? <img key={i} src={img}/> : <></>) : <></>}
           </div>
         </article>
       }

@@ -49,7 +49,6 @@ body {
 
 #root {
   height: 100%;
-  min-height: 100vh;
   width: 100%;
   padding: 0px 10px;
   box-sizing: border-box;
@@ -89,7 +88,7 @@ main * {
 /** Home **/
 .container {
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .dragOver {
@@ -363,6 +362,7 @@ header {
 }
 
 /** Projects Page **/
+
 .projects-container {
   display: flex;
   flex-direction: row;
@@ -407,9 +407,12 @@ header {
   }
 }
 
-/** Project Page **/
+/** Project Details Page **/
 .project-page {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 110px);
 }
 
 .project-info {

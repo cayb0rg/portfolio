@@ -9,9 +9,9 @@ const projects = [
   {
     param: "drain-cleaning",
     name: "henning drain cleaning",
-    categories: ["Web Development", "Graphic Design"],
+    categories: ["Web Development", "Graphic Design", "HTML5", "CSS3", "Node.js", "Pug"],
     year: "2019",
-    description: "A website I made using Node.js, Pug, HTML, and CSS for a client.",
+    description: "A website I made using Node.js, Pug, HTML, and CSS for a client. All graphics were designed and made by yours truly in coordinance with the client's vision.",
     url: "https://henningdraincleaning.com",
     images: [
       henning640
@@ -22,9 +22,9 @@ const projects = [
   {
     param: "to-do-list",
     name: "to do list",
-    categories: ["Web Development", "Illustration"],
-    year: "2020",
-    description: "Description",
+    categories: ["Web Development", "HTML5", "CSS3", "MongoDB", "Node.js", "Pug"],
+    year: "2019",
+    description: "A simple to do list I made using MongoDB, Node.js, Pug, HTML, and CSS as a way to learn the model-view-controller architecture.",
     url: "https://stratagem-to-do-list.herokuapp.com",
     github: "https://github.com/cayb0rg/to-do-list",
     images: [
@@ -35,9 +35,9 @@ const projects = [
   {
     param: "libgen-api",
     name: "library genesis search tool",
-    categories: ["Web Development"],
+    categories: ["Web Development", "React.js", "GSAP", "HTML5", "CSS3"],
     year: "2020",
-    description: "Description",
+    description: "This project was made using React.js, GSAP, and my Library Genesis API. Users can search for books within Library Genesis using the book's title, author, ISBN, etc.",
     url: "https://cayb0rg.github.io/libgen_api_implementation/",
     github: "https://github.com/cayb0rg/libgen_api_implementation",
     images: [
@@ -50,7 +50,7 @@ const projects = [
     name: "Camper",
     categories: ["Adobe Illustrator", "GSAP", "HTML5", "CSS3"],
     year: "2020",
-    description: "Description",
+    description: "I designed the camper in Adobe Illustrator and animated it using GSAP, HTML, and CSS. Implementing the fireflies was a challenging but enlightening experience.",
     url: "https://cayb0rg.github.io/camper-animation/",
     github: "https://github.com/cayb0rg/camper-animation",
     images: [
@@ -63,7 +63,7 @@ const projects = [
     name: "Tic Tac Toe",
     categories: ["JavaScript", "HTML5", "CSS3"],
     year: "2019",
-    description: "Description",
+    description: "This project was made using JavaScript, HTML, and CSS. Users can choose to play against the computer or another player locally. The computer has an easy and impossible mode.",
     url: "https://cayb0rg.github.io/tic-tac-toe/",
     github: "https://github.com/cayb0rg/tic-tac-toe",
     images: [
