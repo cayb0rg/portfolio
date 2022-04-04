@@ -6,6 +6,12 @@ import Arrow from './Arrow.js';
 
 export default function Menu(props) {
 
+  const menuItems = [
+    {name: "home", param: ""},
+    {name: "projects", param: "projects"},
+    {name: "about", param: "about"}
+  ];
+
   function handleOnClick() {
     props.setIsMenuOpen(false);
   }
@@ -18,33 +24,21 @@ export default function Menu(props) {
     document.getElementById(`${e.target.text}-arrow`).style.display="none";
   }
 
-    // id of Arrow must match text of Link
-  function Menu(props) {
-    return (
-      <nav className="list menu">
-        {props.items.map((item, i) =>
-          <Link key={i} to={"/" + item.param} {...props}>
-            <Arrow id={item.name + "-arrow"} className="menu-arrow"/>
-            {item.name}
-          </Link>
-        )}
-      </nav>
-    )
-  }
-
   return (
-    <div>
-      <Menu
-        items={[
-          {name: "home", param: ""},
-          {name: "projects", param: "projects"},
-          {name: "about", param: "about"}
-        ]}
-        onClick={handleOnClick}
-        onMouseEnter={handleOnMouseEnter}
-        onMouseLeave={handleOnMouseLeave}
-      />
-    </div>
+    <nav className="list menu container">
+      {menuItems.map((item, i) =>
+        <Link
+          key={i}
+          to={"/" + item.param}
+          onClick={handleOnClick}
+          onMouseEnter={handleOnMouseEnter}
+          onMouseLeave={handleOnMouseLeave}
+        >
+          <Arrow id={item.name + "-arrow"} className="menu-arrow"/>
+          {item.name}
+        </Link>
+      )}
+    </nav>
 
   )
 }

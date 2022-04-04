@@ -9,4 +9,4 @@ module.exports = merge(common, {
     static: './dist',
     historyApiFallback: true,
   }
-};
+});

@@ -14,7 +14,7 @@ export default function Header(props) {
     <header>
       <div>
         <a href="/">
-          <h1>cay.li</h1>
+          <h1>cayborg.io</h1>
         </a>
       </div>
       <div className="tools">

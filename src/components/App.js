@@ -23,16 +23,20 @@ export default function App() {
   const [repos, setRepos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Update local storage when user changes to and from dark mode
   useEffect(() => {
     localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
-    if (isDarkMode) document.getElementById('root').classList.add('dark-mode');
-    if (!isDarkMode) document.getElementById('root').classList.remove('dark-mode');
+    if (isDarkMode) document.querySelector('body').classList.add('dark-mode');
+    if (!isDarkMode) document.querySelector('body').classList.remove('dark-mode');
   }, [isDarkMode]);
 
+  // Page load animation
   useEffect(() => {
     document.getElementById('main').classList.add('load-main');
   }, []);
 
+  // Close menu icon when outside menu
+  // Open menu icon when inside menu
   useEffect(() => {
     if (!isMenuOpen)
     {
@@ -68,7 +72,7 @@ export default function App() {
             <Route path="/" element= {<Home repos={repos} isLoading={isLoading}/>}/>
             <Route path="/projects" element={<Projects repos={repos}/>}/>
             <Route path="/projects/:name" element={<Project/>}/>
-            <Route path="/about" element={<About />}/>
+            <Route path="/about" element={<About isDarkMode={isDarkMode}/>}/>
             <Route path="/contact" element={<Contact />}/>
             <Route path="/*" element={<NotFound />} />
           </Routes>

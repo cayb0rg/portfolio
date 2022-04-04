@@ -51,7 +51,6 @@ export default function Home(props) {
 
   function Repositories() {
     if (!props.isLoading && props.repos) {
-      console.log(props.repos);
       return (
         <div className="repos">
           {props.repos.map((repo, i) =>
@@ -60,65 +59,60 @@ export default function Home(props) {
         </div>
       )
     }
-    else {
-      return (
-        <></>
-      )
-    }
+    else
+      return <></>;
   }
 
   return (
-    <div>
-      <div className="home-container container">
-        <div className="reactivezone">
-          <div id="subject" className="dropzone" onDragOver={handleOnDragOver} onDrop={handleOnDrop}>
-            <div id="hey" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>hey, i'm</p>
-            </div>
-          </div>
-          <div id="predicate" className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="ch" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>cayli henning</p>
-            </div>
+    <article className="home-container container">
+      <div className="reactivezone">
+        <div id="subject" className="dropzone" onDragOver={handleOnDragOver} onDrop={handleOnDrop}>
+          <div id="hey" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>hey, i'm</p>
           </div>
         </div>
-        <div className="boxes">
-          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="but" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>but you can call me</p>
-            </div>
-          </div>
-          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="cay" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>cay</p>
-            </div>
-          </div>
-          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="i'm" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>i'm</p>
-            </div>
-          </div>
-          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="front-end-developer" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>a front-end developer</p>
-            </div>
-          </div>
-          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="learning" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>learning software development and graphic design</p>
-            </div>
+        <div id="predicate" className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+          <div id="ch" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>cayli henning</p>
           </div>
         </div>
-        <Link to="/projects" className="see-projects-btn button">
-          see my projects
-          <svg id="project-next-arrow" className="arrow" viewbox="0 0 20 8">
-            <line x1="0" x2="20" y1="4" y2="4"/>
-            <line x1="16" x2="20" y1="0" y2="4"/>
-            <line x1="16" x2="20" y1="8" y2="4"/>
-          </svg>
-        </Link>
-        <Repositories/>
       </div>
-    </div>
+      <div className="boxes">
+        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+          <div id="but" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>but you can call me</p>
+          </div>
+        </div>
+        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+          <div id="cay" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>cay</p>
+          </div>
+        </div>
+        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+          <div id="i'm" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>i'm</p>
+          </div>
+        </div>
+        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+          <div id="front-end-developer" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>a front-end developer</p>
+          </div>
+        </div>
+        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+          <div id="learning" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>learning software development and graphic design</p>
+          </div>
+        </div>
+      </div>
+      <Link to="/projects" className="see-projects-btn button">
+        see my projects
+        <svg id="project-next-arrow" className="arrow" viewbox="0 0 20 8">
+          <line x1="0" x2="20" y1="4" y2="4"/>
+          <line x1="16" x2="20" y1="0" y2="4"/>
+          <line x1="16" x2="20" y1="8" y2="4"/>
+        </svg>
+      </Link>
+      <Repositories/>
+    </article>
   )
 }

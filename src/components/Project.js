@@ -43,7 +43,7 @@ export default function Project() {
   return (
     <div className="project-page">
       {project &&
-        <div className="project-container container">
+        <article className="project-container container">
           <div className="project-header">
             <h1>{project.name}</h1>
           </div>
@@ -71,7 +71,7 @@ export default function Project() {
           <div className="photos">
             {project.images ? project.images.map((img, i) => i > 0 ? <img src={img}/> : <></>) : <></>}
           </div>
-        </div>
+        </article>
       }
       <button className="button next-project-btn" onClick={handleNextProject}
         onMouseOver={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
