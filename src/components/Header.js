@@ -3,29 +3,38 @@ import React, { useEffect } from 'react';
 export default function Header(props) {
 
   function handleMenuClick(e) {
+    if (e.type == "keypress" && e.key != "Enter")
+    {
+      return;
+    }
     props.setIsMenuOpen(!props.isMenuOpen);
   }
 
   function handleModeClick(e) {
+    if (e.type == "keypress" && e.key != "Enter")
+    {
+      return;
+    }
     props.setIsDarkMode(!props.isDarkMode);
   }
 
   return (
     <header>
       <div>
-        <a href="/">
+        <a href="/" tabIndex="0">
           <h1>cayborg.io</h1>
         </a>
       </div>
       <div className="tools">
-        <div onClick={handleModeClick} className={props.isDarkMode ? "tool-icon dark-mode-icon-on" : "tool-icon"}>
+        <div onClick={handleModeClick} onKeyPress={handleModeClick} tabIndex="0"
+          className={props.isDarkMode ? "tool-icon dark-mode-icon-on" : "tool-icon"}>
           {!props.isDarkMode ?
-            <svg viewBox="0 0 30 30" id="darkmodeicon">
+            <svg role="img" viewBox="0 0 30 30" id="darkmodeicon">
               <circle id="moon-dark" r="4" cx="15" cy="15"/>
               <circle id="moon-shadow" r="4" cx="18" cy="13"/>
             </svg>
             :
-            <svg viewBox="0 0 30 30" id="lightmodeicon">
+            <svg role="img" viewBox="0 0 30 30" id="lightmodeicon">
               <circle r="4" cx="15" cy="15"/>
               // Diagonal
               <line x1="8" x2="11" y1="8" y2="11"/>
@@ -42,8 +51,9 @@ export default function Header(props) {
           }
 
         </div>
-        <div onClick={handleMenuClick} id="menu-icon" className="tool-icon">
-          <svg viewBox="0 0 30 30">
+        <div onClick={handleMenuClick} onKeyPress={handleMenuClick}
+          id="menu-icon" className="tool-icon" tabIndex="0">
+          <svg role="img" viewBox="0 0 30 30">
             <rect id="menu-rect-horizontal" y="10" width="30" height="10" rx="5"/>
             <rect id="menu-rect-vertical" x="10" width="10" height="30" rx="5"/>
           </svg>

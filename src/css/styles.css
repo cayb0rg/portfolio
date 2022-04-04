@@ -30,6 +30,10 @@ html {
   text-transform: lowercase;
 }
 
+a:focus {
+  outline: 2px dotted black;
+}
+
 a {
   border-bottom: 1px solid rgb(0,0,0,0);
 }
@@ -504,7 +508,7 @@ header {
 
 .see-projects-btn {
   border-bottom: 1px solid rgb(0,0,0,0);
-  margin-top: 1em;
+  margin: 1em auto;
   padding-bottom: 1em;
   width: 100%;
   display: inline-block;

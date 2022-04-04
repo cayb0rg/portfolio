@@ -143,7 +143,7 @@ export default function Home(props) {
       </div>
       <Link to="/projects" className="see-projects-btn button">
         see my projects
-        <svg id="project-next-arrow" className="arrow" viewbox="0 0 20 8">
+        <svg id="project-next-arrow" className="arrow" viewBox="0 0 20 8">
           <line x1="0" x2="20" y1="4" y2="4"/>
           <line x1="16" x2="20" y1="0" y2="4"/>
           <line x1="16" x2="20" y1="8" y2="4"/>

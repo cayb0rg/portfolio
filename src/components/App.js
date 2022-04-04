@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import React, { useEffect, useState, useRef, useCallback } from "react";
+import ReactDOM from "react-dom";
 import {
   BrowserRouter,
   Routes,
