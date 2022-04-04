@@ -45,10 +45,10 @@ a:hover {
 body {
   overflow-x: hidden;
   margin: 0;
+  height: 100vh;
 }
 
 #root {
-  height: 100%;
   width: 100%;
   padding: 0px 10px;
   box-sizing: border-box;
@@ -98,6 +98,9 @@ main * {
 .draggable {
   padding: 1em;
   cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .draggable:active {
@@ -461,6 +464,7 @@ header {
 
 .photos > * {
   max-width: 1000px;
+  width: 100%;
   margin: auto;
 }
 

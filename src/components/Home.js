@@ -22,8 +22,7 @@ export default function Home(props) {
 
   function handleOnDrop(e) {
     e.preventDefault();
-
-    // Get dropzone
+    // Get dropzone element
     let parent = e.target;
     while (parent && !parent.classList.contains('dropzone'))
     {
@@ -36,16 +35,59 @@ export default function Home(props) {
     parent.appendChild(dragged);
     dragged.style.display = "block";
 
-    // Navigate based on what is in drop zone
-    if (document.getElementById('subject').firstElementChild.id=="hey"
-    || document.getElementById('subject').firstElementChild.id=="i'm")
+    // If user dropped in reactive zone, make a response
+    if (parent.parentNode.classList.contains("reactivezone"))
     {
-      if (document.getElementById('predicate').firstElementChild.id=="cay")
-        navigate("/about");
-      else if (document.getElementById('predicate').firstElementChild.id=="front-end-developer")
-        navigate("/projects");
-      else if (document.getElementById('predicate').firstElementChild.id=="learning")
-        navigate("/projects");
+      const subject = document.getElementById('subject').firstElementChild;
+      const predicate = document.getElementById('predicate').firstElementChild;
+
+      const subjectNew = document.createElement('p');
+      const predicateNew = document.createElement('p');
+
+      let flag = false;
+
+      if (subject.id=="hey")
+      {
+        if (predicate.id=="cay")
+          navigate("/about");
+        if (predicate.id=="burgers")
+        {
+          subjectNew.textContent = "hi pie!";
+          predicateNew.textContent = "it's a pleasure to meet you :)";
+          flag = true;
+        }
+        if (predicate.id=="front-end-developer")
+        {
+          subjectNew.textContent = "hi front end development!";
+          predicateNew.textContent = "it's a pleasure to meet you :)";
+          flag = true;
+        }
+      }
+      if (subject.id=="i-like")
+      {
+        if (predicate.id=="cay")
+        {
+          predicateNew.textContent = "I like you too! :)";
+          flag = true;
+        }
+        else if (predicate.id=="front-end-developer")
+          navigate("/projects");
+        else if (predicate.id=="burgers")
+          navigate("/about#pie");
+      }
+
+      if (flag)
+      {
+        setTimeout(() => {
+          subject.appendChild(subjectNew);
+          predicate.appendChild(predicateNew);
+        }, 500);
+        setTimeout(() => {
+          subject.removeChild(subjectNew);
+          predicate.removeChild(predicateNew);
+        }, 5000);
+      }
+
     }
   }
 
@@ -72,35 +114,30 @@ export default function Home(props) {
           </div>
         </div>
         <div id="predicate" className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="ch" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>cayli henning</p>
+          <div id="cay" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>cay</p>
           </div>
         </div>
       </div>
       <div className="boxes">
         <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="but" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>but you can call me</p>
+          <div id="i-like" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>i like</p>
           </div>
         </div>
         <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="cay" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>cay</p>
+          <div id="burgers" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>pie</p>
           </div>
         </div>
         <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="i'm" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>i'm</p>
+          <div id="and" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+            <p>and</p>
           </div>
         </div>
         <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
           <div id="front-end-developer" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>a front-end developer</p>
-          </div>
-        </div>
-        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="learning" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>learning software development and graphic design</p>
+            <p>front-end web development</p>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ export default function About(props) {
 
   return (
     <article className="about-container container">
-      <h2>about</h2>
+      <h1>about</h1>
       <p>I'm a Computer Science student at the University of Central Florida. I gained an interest in programming after playing the game <i>Human Resource Machine</i>, and it's only been downhill from there.</p>
       <p>When I'm not sitting in front of a computer screen, I like exploring places on my bike and reading.</p>
       <section className="about-links">
@@ -27,6 +27,10 @@ export default function About(props) {
             src={LinkedInLogo}
           />
         </a>
+      </section>
+      <section>
+        <h2>pie</h2>
+        <p>coming soon (soon not to be defined)</p>
       </section>
     </article>
   )

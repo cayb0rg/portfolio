@@ -1,4 +1,5 @@
 import camper640 from '/src/assets/images/camper_640.png';
+import camperSVG from '/src/assets/images/camper.svg';
 import henning640 from '/src/assets/images/henning_640.png';
 import stratagem640 from '/src/assets/images/stratagem_640.png';
 import libgen640 from '/src/assets/images/libgen_640.png';
@@ -54,7 +55,8 @@ const projects = [
     url: "https://cayb0rg.github.io/camper-animation/",
     github: "https://github.com/cayb0rg/camper-animation",
     images: [
-      camper640
+      camper640,
+      camperSVG
     ],
     nextProject: "tic-tac-toe"
   },
