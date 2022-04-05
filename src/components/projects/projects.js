@@ -39,8 +39,8 @@ const projects = [
     categories: ["Web Development", "React.js", "GSAP", "HTML5", "CSS3"],
     year: "2020",
     description: "This project was made using React.js, GSAP, and my Library Genesis API. Users can search for books within Library Genesis using the book's title, author, ISBN, etc.",
-    url: "https://cayb0rg.github.io/libgen_api_implementation/",
-    github: "https://github.com/cayb0rg/libgen_api_implementation",
+    url: "https://cayb0rg.github.io/libgen_api_search_tool/",
+    github: "https://github.com/cayb0rg/libgen_api_search_tool",
     images: [
       libgen640
     ],
@@ -48,7 +48,7 @@ const projects = [
   },
   {
     param: "camper",
-    name: "Camper",
+    name: "Camper animation",
     categories: ["Adobe Illustrator", "GSAP", "HTML5", "CSS3"],
     year: "2020",
     description: "I designed the camper in Adobe Illustrator and animated it using GSAP, HTML, and CSS. Implementing the fireflies was a challenging but enlightening experience.",
