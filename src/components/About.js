@@ -28,10 +28,11 @@ export default function About(props) {
           />
         </a>
       </section>
-      <section>
-        <h2>pie</h2>
+      {props.likesPie ? <section>
+        <h2 id="pie">pie</h2>
         <p>coming soon (soon not to be defined)</p>
-      </section>
+      </section> : <></>}
+
     </article>
   )
 }

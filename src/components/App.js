@@ -13,7 +13,6 @@ import Header from './Header.js';
 import Menu from './Menu.js';
 import Home from './Home.js';
 import About from './About.js';
-import Contact from './Contact.js';
 import Projects from './Projects.js';
 import Project from './Project.js';
 import NotFound from './NotFound.js';
@@ -23,6 +22,7 @@ export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(JSON.parse(localStorage.getItem('isDarkMode')));
   const [repos, setRepos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [likesPie, setLikesPie] = useState(false);
 
   // Update local storage when user changes to and from dark mode
   useEffect(() => {
@@ -70,11 +70,10 @@ export default function App() {
       <main id="main">
         {isMenuOpen ? <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/> :
           <Routes>
-            <Route path="/" element= {<Home repos={repos} isLoading={isLoading}/>}/>
+            <Route path="/" element= {<Home setLikesPie={setLikesPie} repos={repos} isLoading={isLoading}/>}/>
             <Route path="/projects" element={<Projects repos={repos}/>}/>
             <Route path="/projects/:name" element={<Project/>}/>
-            <Route path="/about" element={<About isDarkMode={isDarkMode}/>}/>
-            <Route path="/contact" element={<Contact />}/>
+            <Route path="/about" element={<About likesPie={likesPie} isDarkMode={isDarkMode}/>}/>
             <Route path="/*" element={<NotFound />} />
           </Routes>
         }

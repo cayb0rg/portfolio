@@ -72,8 +72,10 @@ export default function Home(props) {
         }
         else if (predicate.id=="front-end-developer")
           navigate("/projects");
-        else if (predicate.id=="burgers")
+        else if (predicate.id=="burgers") {
+          props.setLikesPie(true);
           navigate("/about#pie");
+        }
       }
 
       if (flag)
