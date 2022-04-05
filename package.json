@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "prestart": "webpack --config webpack.prod.js",
     "start": "node server.js",
     "postinstall": "webpack --config webpack.prod.js"
   },
