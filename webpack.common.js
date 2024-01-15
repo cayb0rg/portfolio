@@ -1,16 +1,22 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const port = process.env.PORT || 3000;
 
 module.exports = {
-  entry: ['@babel/polyfill', './src/index.js'],
+  entry: path.join(__dirname, "src", "index.js"),
   plugins: [
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Production',
-      template: 'src/index.html'
+      template: path.join(__dirname, "src", "index.html"),
     })
   ],
+  // webpack 5 comes with devServer which loads in development mode
+  devServer: {
+    port: 3000,
+    liveReload: true
+  },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -21,7 +27,10 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ],
       },
       {
         test: /\.m?js$/i,
@@ -34,47 +43,16 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          }
-        ]
-      },
-      {
-          test: /\.mp4$/,
-          use: [
-              {
-                  loader: "file-loader",
-                  options: {
-                      name: "[name].[ext]",
-                      outputPath: "video"
-                  }
-              }
-          ]
+        test: /\.(png|jpg|jpeg|gif|mp4)$/i,
+        type: 'asset/resource'
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: "[name].[contenthash].[ext]",
-              output: '/fonts'
-            }
-          }
-        ]
+        type: 'asset/inline'
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10000,
-            },
-          },
-        ],
+        type: 'asset/inline'
       },
     ]
   }

@@ -48,7 +48,7 @@ export default function Home(props) {
 
       if (subject.id=="hey")
       {
-        if (predicate.id=="cay")
+        if (predicate.id=="nines")
           navigate("/about");
         if (predicate.id=="burgers")
         {
@@ -65,9 +65,9 @@ export default function Home(props) {
       }
       if (subject.id=="i-like")
       {
-        if (predicate.id=="cay")
+        if (predicate.id=="nines")
         {
-          predicateNew.textContent = "I like you too! :)";
+          predicateNew.textContent = "you may need help";
           flag = true;
         }
         else if (predicate.id=="front-end-developer")

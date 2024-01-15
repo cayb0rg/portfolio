@@ -22,11 +22,11 @@ export default function Header(props) {
     <header>
       <div>
         <a href="/" tabIndex="0">
-          <h1>cayborg.io</h1>
+          <h1>cay.li</h1>
         </a>
       </div>
       <div className="tools">
-        <div onClick={handleModeClick} onKeyPress={handleModeClick} tabIndex="0"
+        <div onClick={handleModeClick} onKeyDown={handleModeClick} tabIndex="0"
           className={props.isDarkMode ? "tool-icon dark-mode-icon-on" : "tool-icon"}>
           {!props.isDarkMode ?
             <svg role="img" viewBox="0 0 30 30" id="darkmodeicon">
@@ -51,7 +51,7 @@ export default function Header(props) {
           }
 
         </div>
-        <div onClick={handleMenuClick} onKeyPress={handleMenuClick}
+        <div onClick={handleMenuClick} onKeyDown={handleMenuClick}
           id="menu-icon" className="tool-icon" tabIndex="0">
           <svg role="img" viewBox="0 0 30 30">
             <rect id="menu-rect-horizontal" y="10" width="30" height="10" rx="5"/>

@@ -9,7 +9,8 @@ export default function Menu(props) {
   const menuItems = [
     {name: "home", param: ""},
     {name: "projects", param: "projects"},
-    {name: "about", param: "about"}
+    {name: "about", param: "about"},
+    {name: "resume", param: "resume"}
   ];
 
   function handleOnClick() {

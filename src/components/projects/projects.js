@@ -1,10 +1,10 @@
-import camper640 from '/src/assets/images/camper_640.png';
-import camperSVG from '/src/assets/images/camper.svg';
-import henning640 from '/src/assets/images/henning_640.png';
-import stratagem640 from '/src/assets/images/stratagem_640.png';
-import libgen640 from '/src/assets/images/libgen_640.png';
-import toDoList640 from '/src/assets/images/to_do_list_640.png';
-import ticTacToe640 from '/src/assets/images/tic_tac_toe_640.png';
+import camper640 from '../../assets/images/camper_640.png';
+import camperSVG from '../../assets/images/camper.svg';
+import henning640 from '../../assets/images/henning_640.png';
+import stratagem640 from '../../assets/images/stratagem_640.png';
+import libgen640 from '../../assets/images/libgen_640.png';
+import toDoList640 from '../../assets/images/to_do_list_640.png';
+import ticTacToe640 from '../../assets/images/tic_tac_toe_640.png';
 
 const projects = [
   {
