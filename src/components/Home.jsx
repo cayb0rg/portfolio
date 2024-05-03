@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Components
-import RepoCard from './RepoCard.js';
+import RepoCard from './RepoCard';
 
 export default function Home(props) {
   let navigate = useNavigate();

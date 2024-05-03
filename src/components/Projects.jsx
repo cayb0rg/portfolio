@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import projects from './projects/projects.js';
 
 // Components
-import Arrow from './Arrow.js';
+import Arrow from './Arrow';
 
 export default function Projects(props) {
 

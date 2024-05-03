@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 export default function Header(props) {
 
@@ -22,7 +22,7 @@ export default function Header(props) {
     <header>
       <div>
         <a href="/" tabIndex="0">
-          <h1>cay.li</h1>
+          <h1>GREML.ING</h1>
         </a>
       </div>
       <div className="tools">

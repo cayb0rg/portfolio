@@ -1,21 +1,22 @@
-import { Outlet } from "react-router-dom";
-import React, { useEffect, useState, useRef, useCallback } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useState, useCallback } from "react";
+import { gql, GraphQLClient } from "graphql-request";
 import {
   BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
 import axios from 'axios';
-import async from 'async';
 
-import Header from './Header.js';
-import Menu from './Menu.js';
-import Home from './Home.js';
-import About from './About.js';
-import Projects from './Projects.js';
-import Project from './Project.js';
-import NotFound from './NotFound.js';
+import Header from './Header';
+import Menu from './Menu';
+import Home from './Home';
+import About from './About';
+import Projects from './Projects';
+import Project from './Project';
+import NotFound from './NotFound';
+import '../css/styles.css';
+
+let gql_client = new GraphQLClient("https://api.github.com/graphql");
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,6 +63,52 @@ export default function App() {
       setRepos(response.data);
       setIsLoading(false);
     });
+  }, []);
+
+  const fetchPinnedRepos = useCallback(async () => {
+    const query = gql`
+      {
+        user(login: "cayb0rg") {
+          pinnedItems(first: 6, types: REPOSITORY) {
+            nodes {
+              ... on Repository {
+                name
+                url
+                stargazerCount
+                primaryLanguage {
+                  name
+                  color
+                  id
+                }
+                description
+                createdAt
+                forkCount
+                homepageUrl
+                id
+                isArchived
+                isFork
+                isInOrganization
+                isTemplate
+                languages(first: 100) {
+                  edges {
+                    node {
+                      name
+                      id
+                      color
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const response = await gql_client.request(query);
+
+    setRepos(response.user.pinnedItems.nodes);
+    setIsLoading(false);
   }, []);
 
   return (

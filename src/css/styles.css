@@ -27,7 +27,7 @@ html {
   text-decoration: none;
   color: var(--dark);
   background-color: var(--light);
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 
 a:focus {

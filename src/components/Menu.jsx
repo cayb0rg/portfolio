@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Components
-import Arrow from './Arrow.js';
+import Arrow from './Arrow';
 
 export default function Menu(props) {
 

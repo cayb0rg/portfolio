@@ -48,7 +48,7 @@ const projects = [
   },
   {
     param: "camper",
-    name: "Camper animation",
+    name: "camper animation",
     categories: ["Adobe Illustrator", "GSAP", "HTML5", "CSS3"],
     year: "2020",
     description: "I designed the camper in Adobe Illustrator and animated it using GSAP, HTML, and CSS. Implementing the fireflies was a challenging but enlightening experience.",
@@ -62,7 +62,7 @@ const projects = [
   },
   {
     param: "tic-tac-toe",
-    name: "Tic Tac Toe",
+    name: "tic tac toe",
     categories: ["JavaScript", "HTML5", "CSS3"],
     year: "2019",
     description: "This project was made using JavaScript, HTML, and CSS. Users can choose to play against the computer or another player locally. The computer has an easy and impossible mode.",

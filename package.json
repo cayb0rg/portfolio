@@ -3,23 +3,25 @@
   "version": "1.0.0",
   "description": "Cay's Portfolio Website",
   "scripts": {
-    "dev": "webpack serve --open --config webpack.dev.js",
-    "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack --config webpack.dev.js",
-    "start": "bun run server.js"
+    "build": "vite build",
+    "dev": "vite"
   },
   "author": "Cay Henning",
   "license": "MIT",
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
+    "@vitejs/plugin-react": "^4.2.1",
     "async": "^3.2.4",
     "axios": "^1.4.0",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0",
+    "vite": "^5.2.11"
   },
   "devDependencies": {
     "@axe-core/react": "^4.7.3",
-    "axe-core": "^4.7.2",
-    "react-router-dom": "^6.15.0"
-  }
+    "axe-core": "^4.7.2"
+  },
+  "type": "module"
 }

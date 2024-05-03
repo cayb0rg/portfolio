@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation, useNavigate } from 'react-router-dom';
 import projects from './projects/projects.js';
 
-import Arrow from './Arrow.js';
+import Arrow from './Arrow';
 
 export default function Project() {
 
