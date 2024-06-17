@@ -584,6 +584,13 @@ header {
   padding: 4px;
 }
 
+.about-container #cat {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+
+}
+
 
 /** Dark Mode **/
 
