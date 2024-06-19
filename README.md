@@ -7,3 +7,4 @@ The code to my portfolio website!
 - React.js
 - Vite
 - Bun
+- Vultr VPS
