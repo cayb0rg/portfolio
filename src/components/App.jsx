@@ -132,6 +132,10 @@ export default function App() {
           </Routes>
         }
       </main>
+      <footer>
+        <p>© 2023 cay h.</p>
+        <p>last updated on 06/19/2024</p>
+      </footer>
 
     </BrowserRouter>
   )

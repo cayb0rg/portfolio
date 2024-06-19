@@ -270,6 +270,17 @@ header {
   transition: transform 1s;
 }
 
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+
+}
+
 /** Opening animation **/
 .menu-icon-open #menu-rect-horizontal {
   animation-name: horizontal-to-x;
