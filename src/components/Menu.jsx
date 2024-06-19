@@ -10,7 +10,7 @@ export default function Menu(props) {
     {name: "home", param: ""},
     {name: "projects", param: "projects"},
     {name: "about", param: "about"},
-    {name: "resume", param: "resume"}
+    // {name: "resume", param: "resume"}
   ];
 
   function handleOnClick() {

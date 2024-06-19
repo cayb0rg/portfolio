@@ -2,9 +2,11 @@ import libgen640 from '../../assets/images/libgen_640.png';
 import toDoList640 from '../../assets/images/to_do_list_640.png';
 import ticTacToe640 from '../../assets/images/tic_tac_toe_640.png';
 import xpline_640 from '../../assets/images/xpline_640.png';
-import gradCap_640 from '../../assets/images/gradCap_640.png';
-import busDisplay_640 from '../../assets/images/busDisplay_640.png';
+import gradCap_640 from '../../assets/images/grad_cap_640.png';
+import busDisplay_640 from '../../assets/images/bus_display_640.png';
 import marching_cubes_640 from '../../assets/images/marching_cubes_640.png';
+import bodyTrackingAvatar640 from '../../assets/images/body_tracking_avatar_640.png';
+import village_circle_640 from '../../assets/images/village_circle_640.png';
 
 
 const projects = [
@@ -32,19 +34,6 @@ const projects = [
     ],
     url: null,
     github: "https://github.com/cayb0rg/slack-bus",
-    nextProject: "xpline"
-  },
-  {
-    param: "xpline",
-    name: "xpline",
-    categories: ["Arduino", "ESP8266", "C++"],
-    year: "2023",
-    description: "A one-dimensional LED Strip XP Farm for the Techranger’s Minecraft room, inspired by the Line Wobbler dungeon crawler. Spiders, which are represented by the red dots, will start spawning when movement is detected or when the room is dark. To fight off these spiders, players control a Techranger, represented by a blue dot, with a joystick made from two MPU6050s. The XP farm also has its own HTTP server which players can access online to see their current XP.",
-    images: [
-      xpline_640,
-    ],
-    url: null,
-    github: "https://github.com/cayb0rg/xpline",
     nextProject: "marching-cubes"
   },
   {
@@ -58,6 +47,45 @@ const projects = [
     ],
     url: null,
     github: "https://github.com/rachelMae/ParallelizationOfProceduralContentGeneration/tree/cay-experimental",
+    nextProject: "body-tracking-avatar"
+  },
+  {
+    param: "body-tracking-avatar",
+    name: "body tracking avatar",
+    categories: ["JavaScript", "Mediapipe", "Three.js", "Maya"],
+    year: "2023",
+    description: "A body tracking avatar I made using JavaScript, Mediapipe, Three.js, and Maya. The avatar is controlled by the user's body movements, which are tracked by the user's webcam.",
+    images: [
+      bodyTrackingAvatar640
+    ],
+    url: "https://cayb0rg.github.io/body-tracking-avatar-cap4720/",
+    github: "https://github.com/cayb0rg/body-tracking-avatar-cap4720",
+    nextProject: "xpline"
+  },
+  {
+    param: "xpline",
+    name: "xpline",
+    categories: ["Arduino", "ESP8266", "C++"],
+    year: "2023",
+    description: "A one-dimensional LED Strip XP Farm for the Techranger’s Minecraft room, inspired by the Line Wobbler dungeon crawler. Spiders, which are represented by the red dots, will start spawning when movement is detected or when the room is dark. To fight off these spiders, players control a Techranger, represented by a blue dot, with a joystick made from two MPU6050s. The XP farm also has its own HTTP server which players can access online to see their current XP.",
+    images: [
+      xpline_640,
+    ],
+    url: null,
+    github: "https://github.com/cayb0rg/xpline",
+    nextProject: "village-circle"
+  },
+  {
+    param: "village-circle",
+    name: "village circle",
+    categories: ["Unity", "C#", "Aseprite"],
+    year: "2023",
+    description: "I worked with three others to make an RPG in Unity for UCF's AI for Game Programming course. The game begins as a 2D top-down fantasy before transitioning to a 3D horror adventure. I was one of the game programmers, so I worked on the character animations, the bosses' behavior trees and state machines, event system, inventory system, dialogue system, menu, and scene transitions.",
+    images: [
+      village_circle_640,
+    ],
+    url: 'https://youtu.be/cFnWXs0_Tdc',
+    github: null,
     nextProject: "to-do-list"
   },
   {

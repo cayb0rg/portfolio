@@ -60,7 +60,14 @@ export default function App() {
       method: 'get',
       url: 'https://api.github.com/users/cayb0rg/repos'
     }).then(response => {
-      setRepos(response.data);
+      let ownRepos = [];
+      for (let repo of response.data) {
+        if (!repo.fork) {
+          ownRepos.push(repo);
+        }
+      }
+      ownRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+      setRepos(ownRepos);
       setIsLoading(false);
     });
   }, []);

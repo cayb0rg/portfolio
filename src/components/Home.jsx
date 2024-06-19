@@ -50,18 +50,10 @@ export default function Home(props) {
       {
         if (predicate.id=="nines")
           navigate("/about");
-        if (predicate.id=="burgers")
-        {
-          subjectNew.textContent = "hi pie!";
-          predicateNew.textContent = "it's a pleasure to meet you :)";
-          flag = true;
-        }
-        if (predicate.id=="front-end-developer")
-        {
-          subjectNew.textContent = "hi front end development!";
-          predicateNew.textContent = "it's a pleasure to meet you :)";
-          flag = true;
-        }
+
+        subjectNew.textContent = "hi " + predicate.textContent + "!";
+        predicateNew.textContent = "it's a pleasure to meet you :)";
+        flag = true;
       }
       if (subject.id=="i-like")
       {
@@ -96,11 +88,14 @@ export default function Home(props) {
   function Repositories() {
     if (!props.isLoading && props.repos) {
       return (
-        <div className="repos">
-          {props.repos.map((repo, i) =>
-            <RepoCard key={i} repo={repo}></RepoCard>
-          )}
-        </div>
+        <>
+          <h2>github projects</h2>
+          <div className="repos">
+            {props.repos.map((repo, i) =>
+              <RepoCard key={i} repo={repo}></RepoCard>
+            )}
+          </div>
+        </>
       )
     }
     else
@@ -109,42 +104,48 @@ export default function Home(props) {
 
   return (
     <article className="home-container container">
-      <div className="reactivezone">
-        <div id="subject" className="dropzone" onDragOver={handleOnDragOver} onDrop={handleOnDrop}>
-          <div id="hey" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>hey, i'm</p>
+      <div className="drag-intro">
+        <div className="reactivezone">
+          <div id="subject" className="dropzone" onDragOver={handleOnDragOver} onDrop={handleOnDrop}>
+            <div id="hey" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+              <p>hey, i'm</p>
+            </div>
+          </div>
+          <div id="predicate" className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+            <div id="cay" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+              <p>cay</p>
+            </div>
           </div>
         </div>
-        <div id="predicate" className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="cay" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>cay</p>
+        <div className="boxes">
+          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+            <div id="i-like" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+              <p>i do</p>
+            </div>
+          </div>
+          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+            <div id="burgers" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+              <p>web dev</p>
+            </div>
+          </div>
+          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+            <div id="and" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+              <p>and</p>
+            </div>
+          </div>
+          <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
+            <div id="front-end-developer" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
+              <p>arduino stuff</p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="boxes">
-        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="i-like" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>i like</p>
-          </div>
-        </div>
-        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="burgers" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>pie</p>
-          </div>
-        </div>
-        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="and" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>and</p>
-          </div>
-        </div>
-        <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-          <div id="front-end-developer" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-            <p>front-end web development</p>
-          </div>
-        </div>
+      <div className="mobile-zone">
+        <h1>hey, i'm cay</h1>
+        <p>i do web dev and arduino stuff</p>
       </div>
       <Link to="/projects" className="see-projects-btn button">
-        see my projects
+        see projects
         <svg id="project-next-arrow" className="arrow" viewBox="0 0 20 8">
           <line x1="0" x2="20" y1="4" y2="4"/>
           <line x1="16" x2="20" y1="0" y2="4"/>

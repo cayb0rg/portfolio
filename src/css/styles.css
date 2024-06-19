@@ -26,7 +26,6 @@ html {
   font-family: 'League Spartan', sans-serif;
   text-decoration: none;
   color: var(--dark);
-  background-color: var(--light);
   /* text-transform: lowercase; */
 }
 
@@ -42,14 +41,11 @@ a:hover {
   border-color: var(--dark);
 }
 
-.dark-mode a:hover {
-  border-color: var(--light);
-}
-
 body {
   overflow-x: hidden;
   margin: 0;
   height: 100vh;
+  background-color: var(--light);
 }
 
 #root {
@@ -71,6 +67,24 @@ body {
   width: 20px;
   height: 8px;
   stroke: var(--dark);
+}
+
+/** Dark Mode **/
+
+.dark-mode, .dark-mode * {
+  color: var(--light);
+}
+
+.dark-mode, .dark-mode body, .dark-mode button {
+  background-color: var(--dark);
+}
+
+.dark-mode svg:not(.languageBlob) {
+  stroke: var(--light) !important;
+}
+
+.dark-mode a:hover {
+  border-color: var(--light);
 }
 
 /** Main **/
@@ -115,6 +129,24 @@ main * {
   min-height: 50px;
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  .drag-intro {
+    display: none;
+  }
+  .mobile-zone {
+    display: block;
+  }
+}
+
+@media (min-width: 800px) {
+  .mobile-zone {
+    display: none;
+  }
+  .drag-intro {
+    display: block;
+  }
 }
 
 .reactivezone {
@@ -584,21 +616,26 @@ header {
   padding: 4px;
 }
 
+.about-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.left {
+  flex: 60%;
+}
+
+.right {
+  flex: 38%;
+  max-width: 100%;
+}
+
 .about-container #cat {
-  width: 100%;
   max-width: 500px;
-  margin: auto;
-
-}
-
-
-/** Dark Mode **/
-
-.dark-mode, .dark-mode * {
-  color: var(--light);
-  background-color: var(--dark);
-}
-
-.dark-mode svg:not(.languageBlob) {
-  stroke: var(--light) !important;
+  min-width: 200px;
+  width: 100%;
 }
