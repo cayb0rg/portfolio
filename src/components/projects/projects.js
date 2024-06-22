@@ -7,6 +7,8 @@ import busDisplay_640 from '../../assets/images/bus_display_640.png';
 import marching_cubes_640 from '../../assets/images/marching_cubes_640.png';
 import bodyTrackingAvatar640 from '../../assets/images/body_tracking_avatar_640.png';
 import village_circle_640 from '../../assets/images/village_circle_640.png';
+import between_shows_640 from '../../assets/images/between_shows_640.png';
+import dragonotchi_640 from '../../assets/images/dragonotchi_640.png';
 
 
 const projects = [
@@ -47,6 +49,19 @@ const projects = [
     ],
     url: null,
     github: "https://github.com/rachelMae/ParallelizationOfProceduralContentGeneration/tree/cay-experimental",
+    nextProject: "dragonotchi"
+  },
+  {
+    param: "dragonotchi",
+    name: "dragonotchi",
+    categories: ["Arduino", "C++", "ESP8266", "Firebase"],
+    year: "2024",
+    description: "A virtual pet that is reminiscent to the 90's pocket pet, Tamagotchi. Once you hatch your little dragon, you are now a parent and have to care for it by playing, feeding and cleaning after it. I worked on the hardware side of the project, which included the ESP8266, LED display, and Firebase integration with Arduino.",
+    images: [
+      dragonotchi_640,
+    ],
+    url: null,
+    github: "https://github.com/Caitlin-Fabian/dragonotchi",
     nextProject: "body-tracking-avatar"
   },
   {
@@ -60,6 +75,19 @@ const projects = [
     ],
     url: "https://cayb0rg.github.io/body-tracking-avatar-cap4720/",
     github: "https://github.com/cayb0rg/body-tracking-avatar-cap4720",
+    nextProject: "between-shows"
+  },
+  {
+    param: "between-shows",
+    name: "between shows",
+    categories: ["React.js", "React Native", "Tailwind CSS"],
+    year: "2023",
+    description: "A web and mobile app I contributed to using React Native, React.js, and Tailwind CSS for a group project in my Software Engineering course at UCF. The app is a platform for users to browse and rate cartoons. I worked primarily on the mobile app with a few contributions to the front-end, such as the recent reviews and infinite scroll.",
+    images: [
+      between_shows_640
+    ],
+    url: "http://www.betweenshows.co/",
+    github: "https://github.com/nizolnier/betweenshows",
     nextProject: "xpline"
   },
   {

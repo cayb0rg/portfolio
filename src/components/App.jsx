@@ -16,6 +16,9 @@ import Project from './Project';
 import NotFound from './NotFound';
 import '../css/styles.css';
 
+import GitHubLight from '../assets/images/GitHub-Mark-Light-64px.png';
+import GitHubDark from '../assets/images/GitHub-Mark-64px.png';
+
 let gql_client = new GraphQLClient("https://api.github.com/graphql");
 
 export default function App() {
@@ -134,7 +137,15 @@ export default function App() {
       </main>
       <footer>
         <p>© 2023 cay h.</p>
-        <p>last updated on 06/19/2024</p>
+        <p>last updated on 06/21/2024</p>
+        <a href="https://github.com/cayb0rg/portfolio" >
+            {isDarkMode ? <img alt="GitHub" src={GitHubLight}/>
+          : <img
+              className="logo"
+              alt="GitHub"
+              src={GitHubDark}
+            />}
+          </a>
       </footer>
 
     </BrowserRouter>

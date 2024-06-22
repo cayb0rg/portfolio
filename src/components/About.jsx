@@ -11,7 +11,7 @@ export default function About(props) {
     <article className="about-container container">
       <div className="left">
         <h1>about</h1>
-        <p>I'm a web developer located in Orlando, FL who likes to make things. I gained an interest in programming after playing the game <i>Human Resource Machine</i>, and it's only been downhill from there. My core skillset lies in front-end but I also have an interest in game development, graphics programming, and emulation.</p>
+        <p>I'm a web developer located in Orlando, FL who likes to make things. I gained an interest in programming after playing the game <i>Human Resource Machine</i>, and it's only been downhill from there. My core skillset lies in front-end but I also have an interest in Arduino, game development, graphics programming, and emulation.</p>
         <p>When I'm not sitting in front of a computer screen, I like exploring places on my bike and hanging out with my cat.</p>
         <section className="about-links">
           <a href="https://github.com/cayb0rg" >
