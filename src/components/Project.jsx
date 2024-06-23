@@ -64,15 +64,22 @@ export default function Project() {
             </div>
             <div className="project-desc">
               <p>{project.description}</p>
+              <ul>
+                {project.bullets ? project.bullets.map((bullet, i) => <li key={i}>{bullet}</li>) : <></>}
+              </ul>
               <div className="project-links">
                 {project.github ? <a href={project.github} target="_blank">
                   view the code
                   <Arrow id="project-next-arrow"/>
                 </a> : <></>}
-                <a href={project.url} target="_blank">
-                  visit the website
-                  <Arrow id="project-next-arrow"/>
-                </a>
+                {
+                  project.url ?
+                  <a href={project.url} target="_blank">
+                    visit demo
+                    <Arrow id="project-next-arrow"/>
+                  </a>
+                  : <></>
+                }
               </div>
             </div>
           </div>

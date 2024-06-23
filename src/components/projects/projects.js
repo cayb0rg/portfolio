@@ -43,7 +43,7 @@ const projects = [
     name: "marching cubes",
     categories: ["Java", "LWJGL", "OpenGL"],
     year: "2024",
-    description: "A marching cubes implementation I made using Java, LWJGL, and OpenGL for a group project on parallelizing procedural content generation techniques. The program generates a 2D surface mesh from 3D data.",
+    description: "A marching cubes implementation I made using Java, LWJGL, and OpenGL for a group project on parallelizing procedural content generation techniques. It utilizes multithreading techniques, which decrease the runtime by 64%. The program generates a 2D surface mesh from 3D data.",
     images: [
       marching_cubes_640,
     ],
@@ -56,7 +56,7 @@ const projects = [
     name: "dragonotchi",
     categories: ["Arduino", "C++", "ESP8266", "Firebase"],
     year: "2024",
-    description: "A virtual pet that is reminiscent to the 90's pocket pet, Tamagotchi. Once you hatch your little dragon, you are now a parent and have to care for it by playing, feeding and cleaning after it. I worked on the hardware side of the project, which included the ESP8266, LED display, and Firebase integration with Arduino.",
+    description: "For this hackathon project, I and two others recreated a virtual pet reminiscent of the 90's Tamagotchi using an ESP8266, a 16x16 LED panel, and Kotlin for the mobile app. I worked on the hardware side of the project, which included the ESP8266, LED display, and Firebase integration with Arduino. The ESP8266 also handled the pet's state, e.g. the pet's hunger, cleanliness, and boredom levels. This required working closely with the Android developers for seamless interaction between the app and the ESP8266. This project won Knight Hacks' Award for Best Design.",
     images: [
       dragonotchi_640,
     ],
@@ -69,7 +69,7 @@ const projects = [
     name: "body tracking avatar",
     categories: ["JavaScript", "Mediapipe", "Three.js", "Maya"],
     year: "2023",
-    description: "A body tracking avatar I made using JavaScript, Mediapipe, Three.js, and Maya. The avatar is controlled by the user's body movements, which are tracked by the user's webcam.",
+    description: "A body tracking avatar I made using JavaScript, Mediapipe, Three.js, and Maya. The avatar is controlled by the user's body movements, which are tracked by the user's webcam. I designed the 3D avatar model using Maya and rigged it using Mixamo. I utilized Mediapipe to find real-time body landmarks from a webcam feed, which I then used to calculate axis angles and quarternions to rotate the avatar's joints. To create smooth movement, I maintained a log of tracked poses and computed the average from these.",
     images: [
       bodyTrackingAvatar640
     ],
@@ -80,9 +80,9 @@ const projects = [
   {
     param: "between-shows",
     name: "between shows",
-    categories: ["React.js", "React Native", "Tailwind CSS"],
+    categories: ["React.js", "React Native", "TanStack Query", "Tailwind CSS"],
     year: "2023",
-    description: "A web and mobile app I contributed to using React Native, React.js, and Tailwind CSS for a group project in my Software Engineering course at UCF. The app is a platform for users to browse and rate cartoons. I worked primarily on the mobile app with a few contributions to the front-end, such as the recent reviews and infinite scroll.",
+    description: "A web and mobile app I contributed to using React Native, React.js, and Tailwind CSS for a group project in my Software Engineering course at UCF. The app is a platform for users to browse and rate cartoons. I worked primarily on the mobile app with a few contributions to the front-end, for which I implemented search functionality with infinite scrolling using TanStack Query.",
     images: [
       between_shows_640
     ],
@@ -108,7 +108,15 @@ const projects = [
     name: "village circle",
     categories: ["Unity", "C#", "Aseprite"],
     year: "2023",
-    description: "I worked with three others to make an RPG in Unity for UCF's AI for Game Programming course. The game begins as a 2D top-down fantasy before transitioning to a 3D horror adventure. I was one of the game programmers, so I worked on the character animations, the bosses' behavior trees and state machines, event system, inventory system, dialogue system, menu, and scene transitions.",
+    description: "I worked with three others to make an RPG in Unity for UCF's AI for Game Programming course. The game begins as a 2D top-down fantasy before transitioning to a 3D horror adventure. My role was game programmer and animator.",
+    bullets: [
+      'Created 62 animation states for the player’s character in Aseprite and Unity’s animator controller',
+      'Developed behavior trees and state machines for boss characters',
+      'Developed a robust event system to handle in-game events, a user-friendly inventory system, and an interactive dialogue system',
+      'Designed and developed user interfaces, including start menus, pause screens, and HUD elements',
+      'Utilized Unity’s Timeline in combination with a custom event system to create keyframe animations',
+      'Collaborated effectively with team members by setting up task allocation and progress tracking with Discord bots and a Gantt chart'
+    ],
     images: [
       village_circle_640,
     ],
@@ -119,9 +127,9 @@ const projects = [
   {
     param: "to-do-list",
     name: "to do list",
-    categories: ["MongoDB", "Node.js", "Pug", "Adobe Illustrator", "GSAP","HTML5", "CSS3"],
+    categories: ["MongoDB", "Node.js", "Pug", "Passport.js", "Adobe Illustrator", "GSAP","HTML5", "CSS3"],
     year: "2020",
-    description: "A simple to do list I made using MongoDB, Node.js, Pug, HTML, and CSS as a way to learn the model-view-controller architecture. I designed the homepage in Adobe Illustrator and animated it using GSAP, HTML, and CSS. Implementing the fireflies was a challenging but enlightening experience.",
+    description: "A simple to do list I made using MongoDB Community Server, Node.js, Pug, HTML, and CSS as a way to learn the model-view-controller architecture as well as user registration and login. I designed the homepage in Adobe Illustrator and animated it using GSAP, HTML, and CSS. Implementing the fireflies was a challenging but enlightening experience.",
     url: "https://todo.greml.ing",
     github: "https://github.com/cayb0rg/to-do-list",
     images: [
@@ -135,7 +143,7 @@ const projects = [
     categories: ["React.js", "GSAP", "HTML5", "CSS3"],
     year: "2020",
     description: "This purely front-end tool was made using React.js, GSAP, and my Library Genesis API. Users can search for books within Library Genesis using the book's title, author, ISBN, etc.",
-    url: "https://libgen.greml.ing",
+    url: null,
     github: "https://github.com/cayb0rg/libgen_api_search_tool",
     images: [
       libgen640
@@ -148,7 +156,7 @@ const projects = [
     categories: ["JavaScript", "HTML5", "CSS3"],
     year: "2019",
     description: "This project was made using JavaScript, HTML, and CSS. Users can choose to play against the computer or another player locally. The computer has an easy and impossible mode, the latter of which uses the minimax algorithm to determine the best move.",
-    url: "https://cayb0rg.github.io/tic-tac-toe/",
+    url: "https://tictactoe.greml.ing",
     github: "https://github.com/cayb0rg/tic-tac-toe",
     images: [
       ticTacToe640
