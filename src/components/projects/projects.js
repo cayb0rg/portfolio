@@ -161,6 +161,17 @@ const projects = [
     images: [
       ticTacToe640
     ],
+    nextProject: "portfolio"
+  },
+  {
+    param: "portfolio",
+    name: "this website!",
+    categories: ["React.js", "HTML5", "CSS3"],
+    year: "2022",
+    description: "This website was made using React.js, HTML, and CSS and statically hosted on a Digital Ocean droplet using Vite. I wanted to create a portfolio that was both fun and informative. I also wanted to experiment with different design elements, drag-and-drop functionalities, and CSS animations.",
+    url: "https://greml.ing",
+    github: "https://github.com/cayb0rg/portfolio",
+    images: [],
     nextProject: "grad-cap"
   }
 ]
