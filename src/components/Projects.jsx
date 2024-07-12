@@ -31,8 +31,9 @@ export default function Projects(props) {
   // Maps projects in projects.js to Link components
   function ProjectsList() {
     return (
-      <div className="list projects-list">
+      <div className="projects">
         <h1 className="projects-header">projects</h1>
+        <ul className="list projects-list">
         {projects.map((project, i) =>
           <Link
             key={i}
@@ -45,6 +46,7 @@ export default function Projects(props) {
             {project.name}
           </Link>
         )}
+        </ul>
       </div>
     )
   }

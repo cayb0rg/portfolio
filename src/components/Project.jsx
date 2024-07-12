@@ -15,7 +15,7 @@ export default function Project() {
     const obj = projects.find(obj => obj.param == projectName);
     if (obj)
     {
-      obj.categories = obj.categories.map((category, i) => <li key={i}>{category}</li>);
+      obj.technologies = obj.technologies.map((category, i) => <li key={i}>{category}</li>);
       setProject(obj);
     }
   }
@@ -51,10 +51,10 @@ export default function Project() {
           </div>
           <div className="project-info">
             <div className="project-details">
-              <div className="project-categories">
-                <h2>category</h2>
+              <div className="project-technologies">
+                <h2>technologies</h2>
                 <ul>
-                  {project.categories}
+                  {project.technologies}
                 </ul>
               </div>
               <div className="project-year">

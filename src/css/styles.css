@@ -398,7 +398,11 @@ footer img {
 
 .projects-list {
   margin: 0;
+  padding: 0;
   max-width: 500px;
+  max-height: 69vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   flex-grow: 1;
 }
 
@@ -418,6 +422,16 @@ footer img {
 }
 
 /** Projects Page **/
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  max-width: 500px;
+  width: 100%;
+  flex-grow: 1;
+}
 
 .projects-container {
   display: flex;
