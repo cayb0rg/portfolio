@@ -167,7 +167,7 @@ export default function Home(props) {
         </div>
         <div className="boxes">
           <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="i-like" className="draggable" draggable={!editing && !responding} onDragStart={handleOnDragStart} onDragEnd={handleOnDrop} onDragEnd={handleOnDrop} onDoubleClick={handleOnDoubleClick}>
+            <div id="i-like" className="draggable" draggable={!editing && !responding} onDragStart={handleOnDragStart} onDragEnd={handleOnDrop} onDoubleClick={handleOnDoubleClick}>
               {editing ? <input type="text" value={iDo} onChange={(e) => setIDo(e.target.value)} onBlur={respond} onKeyDown={(e) => {if (e.key == "Enter") respond(e)}}/> : <p>{iDo}</p> }
             </div>
           </div>
