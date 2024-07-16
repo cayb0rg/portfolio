@@ -6,6 +6,8 @@ import projects from './projects/projects.js';
 import Arrow from './Arrow';
 
 export default function Projects(props) {
+  const [filter, setFilter] = React.useState("all");
+  const filters = ["all", "web", "graphics", "hardware", "software", "mobile", "games"];
 
   function onProjectHover(src) {
 
@@ -33,18 +35,27 @@ export default function Projects(props) {
     return (
       <div className="projects">
         <h1 className="projects-header">projects</h1>
+        <div className="filters">
+          {filters.map((f, i) => {
+            return <button key={i} className={filter == f ? "selected" : ""}
+              onClick={() => setFilter(f)}>{f} <div className="slide"></div></button>
+          })}
+        </div>
         <ul className="list projects-list">
-        {projects.map((project, i) =>
-          <Link
-            key={i}
-            to={"/projects/" + project.param}
-            onMouseOver={() => onProjectHover(project.images[0])}
-            onMouseEnter={handleOnMouseEnter}
-            onMouseLeave={handleOnMouseLeave}
-          >
-            <Arrow id={project.name + "-arrow"} className="menu-arrow"/>
-            {project.name}
-          </Link>
+        {projects.map((project, i) => {
+            if (filter === "all" || project.tags.includes(filter))
+              return <Link
+                key={i}
+                to={"/projects/" + project.param}
+                onMouseOver={() => onProjectHover(project.images[0])}
+                onMouseEnter={handleOnMouseEnter}
+                onMouseLeave={handleOnMouseLeave}
+              >
+                <Arrow id={project.name + "-arrow"} className="menu-arrow"/>
+                {project.name}
+              </Link>
+            return <></>
+          }
         )}
         </ul>
       </div>

@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Components
 import RepoCard from './RepoCard';
+import doubleClick from "../assets/images/icons/double-click.png";
 
 export default function Home(props) {
   let navigate = useNavigate();
 
   const [dragged, setDragged] = useState(null);
+  const [editing, setEditing] = useState(false);
+  const [showHint, setShowHint] = useState(true);
+  const [responding, setResponding] = useState(false);
+  const [shownWelcome, setShownWelcome] = useState(false);
+
+  const [hey, setHey] = useState("hey, i'm");
+  const [cay, setCay] = useState("cay");
+  const [iDo, setIDo] = useState("i do");
+  const [webDev, setWebDev] = useState("web dev");
+  const [and, setAnd] = useState("and");
+  const [arduino, setArduino] = useState("arduino stuff");
 
   function handleOnDragStart(e) {
+    if (responding) return;
     setDragged(e.target);
     setTimeout(() => {
       e.target.style.display = "none";
@@ -29,15 +42,22 @@ export default function Home(props) {
       parent = parent.parentNode;
     }
 
+    if (!parent || !parent.classList.contains('dropzone')) {
+      dragged.parentNode.appendChild(dragged);
+    };
+
     // Swap elements
     dragged.parentNode.appendChild(parent.firstElementChild);
     dragged.parentNode.removeChild(dragged);
     parent.appendChild(dragged);
     dragged.style.display = "block";
+  }
 
-    // If user dropped in reactive zone, make a response
-    if (parent.parentNode.classList.contains("reactivezone"))
-    {
+  function respond (e) {
+    if (e.target.parentNode && e.target.parentNode.parentNode.id != "predicate") {
+      return;
+    }
+    if (!showHint && !responding && e.target.value != "cay") {
       const subject = document.getElementById('subject').firstElementChild;
       const predicate = document.getElementById('predicate').firstElementChild;
 
@@ -51,8 +71,8 @@ export default function Home(props) {
         if (predicate.id=="nines")
           navigate("/about");
 
-        subjectNew.textContent = "hi " + predicate.textContent + "!";
-        predicateNew.textContent = "it's a pleasure to meet you :)";
+        subjectNew.textContent = "hi " + e.target.value + "! 👋";
+        predicateNew.textContent = "welcome!";
         flag = true;
       }
       if (subject.id=="i-like")
@@ -74,16 +94,42 @@ export default function Home(props) {
       {
         setTimeout(() => {
           subject.appendChild(subjectNew);
-          predicate.appendChild(predicateNew);
+          if (!shownWelcome) {
+            predicate.appendChild(predicateNew);
+          }
+          setShownWelcome(true);
+          setResponding(true)
         }, 500);
         setTimeout(() => {
           subject.removeChild(subjectNew);
-          predicate.removeChild(predicateNew);
+          if (!shownWelcome) {
+            predicate.removeChild(predicateNew);
+          }
+          setResponding(false);
         }, 5000);
       }
-
     }
   }
+
+  // window event listener for clicking outside of draggables
+  window.addEventListener('click', (e) => {
+    if (e.target.tagName != "INPUT") {
+      setEditing(false);
+    }
+  });
+
+  function handleOnDoubleClick(e) {
+    if (responding) return;
+    setEditing(true);
+    setShowHint(false);
+    e.target.querySelector('input')?.focus();
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key == "Enter" || e.key == "Escape") {
+      setEditing(false);
+    }
+  });
 
   function Repositories() {
     if (!props.isLoading && props.repos) {
@@ -107,35 +153,37 @@ export default function Home(props) {
       <div className="drag-intro">
         <div className="reactivezone">
           <div id="subject" className="dropzone" onDragOver={handleOnDragOver} onDrop={handleOnDrop}>
-            <div id="hey" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>hey, i'm</p>
+            <div id="hey" className="draggable" draggable={!editing && !responding} onDragStart={handleOnDragStart} onDragEnd={handleOnDrop}>
+              {/* {editing ? <input type="text" value={hey} onChange={(e) => setHey(e.target.value)} onBlur={respond} onKeyDown={(e) => {if (e.key == "Enter") respond(e)}}/> : <p>{hey}</p> } */}
+              <p>{hey}</p>
             </div>
           </div>
           <div id="predicate" className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="cay" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>cay</p>
+            <div id="cay" className="draggable" draggable={!editing && !responding} onDragStart={handleOnDragStart} onDragEnd={handleOnDrop} onDoubleClick={handleOnDoubleClick}>
+              {editing ? <input type="text" value={cay} onChange={(e) => setCay(e.target.value)} onBlur={respond} onKeyDown={(e) => {if (e.key == "Enter") respond(e)}}/> : <p>{cay}</p> }
             </div>
           </div>
+          <img id="double-click-hint" className={showHint ? "active" : ""} src={doubleClick} alt="double-click"/>
         </div>
         <div className="boxes">
           <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="i-like" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>i do</p>
+            <div id="i-like" className="draggable" draggable={!editing && !responding} onDragStart={handleOnDragStart} onDragEnd={handleOnDrop} onDragEnd={handleOnDrop} onDoubleClick={handleOnDoubleClick}>
+              {editing ? <input type="text" value={iDo} onChange={(e) => setIDo(e.target.value)} onBlur={respond} onKeyDown={(e) => {if (e.key == "Enter") respond(e)}}/> : <p>{iDo}</p> }
             </div>
           </div>
           <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="burgers" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>web dev</p>
+            <div id="burgers" className="draggable" draggable={!editing && !responding} onDragStart={handleOnDragStart} onDragEnd={handleOnDrop} onDoubleClick={handleOnDoubleClick}>
+              {editing ? <input type="text" value={webDev} onChange={(e) => setWebDev(e.target.value)} onBlur={respond} onKeyDown={(e) => {if (e.key == "Enter") respond(e)}}/> : <p>{webDev}</p> }
             </div>
           </div>
           <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="and" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>and</p>
+            <div id="and" className="draggable" draggable={!editing && !responding} onDragStart={handleOnDragStart} onDragEnd={handleOnDrop} onDoubleClick={handleOnDoubleClick}>
+              {editing ? <input type="text" value={and} onChange={(e) => setAnd(e.target.value)} onBlur={respond} onKeyDown={(e) => {if (e.key == "Enter") respond(e)}}/> : <p>{and}</p> }
             </div>
           </div>
           <div className="dropzone" onDragOver={handleOnDragOver}  onDrop={handleOnDrop}>
-            <div id="front-end-developer" className="draggable" draggable="true" onDragStart={handleOnDragStart}>
-              <p>arduino stuff</p>
+            <div id="front-end-developer" className="draggable" draggable={!editing && !responding} onDragStart={handleOnDragStart} onDragEnd={handleOnDrop} onDoubleClick={handleOnDoubleClick}>
+              {editing ? <input type="text" value={arduino} onChange={(e) => setArduino(e.target.value)} onBlur={respond} onKeyDown={(e) => {if (e.key == "Enter") respond(e)}}/> : <p>{arduino}</p> }
             </div>
           </div>
         </div>
@@ -152,7 +200,7 @@ export default function Home(props) {
           <line x1="16" x2="20" y1="8" y2="4"/>
         </svg>
       </Link>
-      <Repositories/>
+      {/* <Repositories/> */}
     </article>
   )
 }

@@ -16,8 +16,8 @@ import Project from './Project';
 import NotFound from './NotFound';
 import '../css/styles.css';
 
-import GitHubLight from '../assets/images/GitHub-Mark-Light-64px.png';
-import GitHubDark from '../assets/images/GitHub-Mark-64px.png';
+import GitHubLight from '../assets/images/icons/GitHub-Mark-Light-64px.png';
+import GitHubDark from '../assets/images/icons/GitHub-Mark-64px.png';
 
 let gql_client = new GraphQLClient("https://api.github.com/graphql");
 
@@ -54,9 +54,9 @@ export default function App() {
     }
   }, [isMenuOpen])
 
-  useEffect(() => {
-    fetchRepos();
-  }, [])
+  // useEffect(() => {
+  //   fetchRepos();
+  // }, [])
 
   const fetchRepos = useCallback(async () => {
     await axios({
@@ -136,8 +136,8 @@ export default function App() {
         }
       </main>
       <footer>
-        <p>© 2023 cay h.</p>
-        <p>last updated on 06/21/2024</p>
+        <p>© 2022 cay h.</p>
+        <p>last updated on 07/16/2024</p>
         <a href="https://github.com/cayb0rg/portfolio" >
             {isDarkMode ? <img alt="GitHub" src={GitHubLight}/>
           : <img

@@ -7,8 +7,8 @@
 <g id="steps">
 <path id="Vector_3" d="M466.4 392.2H375.6L379.9 379.7H462.1L466.4 392.2Z" fill="#005082"/>
 <path id="Vector_4" d="M464.9 377.2H377.1L382.1 363.9H459.9L464.9 377.2Z" fill="#005082"/>
-<path id="Vector_5" d="M386.5 377V382" stroke="black" stroke-width="3" stroke-miterlimit="10"/>
-<path id="Vector_6" d="M452.5 377V382" stroke="black" stroke-width="3" stroke-miterlimit="10"/>
+<path id="Vector_5" d="M386.5 377V382" stroke="black" strokeWidth="3" stroke-miterlimit="10"/>
+<path id="Vector_6" d="M452.5 377V382" stroke="black" strokeWidth="3" stroke-miterlimit="10"/>
 </g>
 <g id="main">
 <g id="Group">
@@ -33,10 +33,10 @@
 </g>
 </g>
 <g id="door">
-<path id="Vector_12" d="M458.5 354.3V207.6C458.5 205.9 457.1 204.6 455.5 204.6H383.8C382.1 204.6 380.8 206 380.8 207.6V354.4C380.8 356.1 382.2 357.4 383.8 357.4H455.5C457.2 357.4 458.5 356 458.5 354.3Z" fill="#FFA41B" stroke="#000827" stroke-width="5" stroke-miterlimit="10"/>
-<path id="Vector_13" d="M458.9 260H409.2V282.7H458.9V260Z" stroke="black" stroke-width="3" stroke-miterlimit="10"/>
-<path id="Vector_14" d="M445.1 260H384.3V282.7H445.1V260Z" fill="#80520E" stroke="black" stroke-width="3" stroke-miterlimit="10"/>
-<path id="Vector_15" d="M446 260H409.8V282.7H446V260Z" fill="#402907" stroke="black" stroke-width="3" stroke-miterlimit="10"/>
+<path id="Vector_12" d="M458.5 354.3V207.6C458.5 205.9 457.1 204.6 455.5 204.6H383.8C382.1 204.6 380.8 206 380.8 207.6V354.4C380.8 356.1 382.2 357.4 383.8 357.4H455.5C457.2 357.4 458.5 356 458.5 354.3Z" fill="#FFA41B" stroke="#000827" strokeWidth="5" stroke-miterlimit="10"/>
+<path id="Vector_13" d="M458.9 260H409.2V282.7H458.9V260Z" stroke="black" strokeWidth="3" stroke-miterlimit="10"/>
+<path id="Vector_14" d="M445.1 260H384.3V282.7H445.1V260Z" fill="#80520E" stroke="black" strokeWidth="3" stroke-miterlimit="10"/>
+<path id="Vector_15" d="M446 260H409.8V282.7H446V260Z" fill="#402907" stroke="black" strokeWidth="3" stroke-miterlimit="10"/>
 <path id="Vector_16" d="M446 266.9H432.4V282.7H446V266.9Z" fill="black" stroke="black" stroke-miterlimit="10"/>
 </g>
 <g id="cat">
@@ -148,8 +148,8 @@
 </g>
 <g id="awning">
 <path id="Vector_52" d="M192.7 170H481.3L540 202H137.3L192.7 170Z" fill="url(#paint0_linear)"/>
-<path id="Vector_53" d="M540 201.9L492.3 325.6" stroke="black" stroke-width="4" stroke-miterlimit="10"/>
-<path id="Vector_54" d="M137.3 201.9L189.1 325.6" stroke="black" stroke-width="4" stroke-miterlimit="10"/>
+<path id="Vector_53" d="M540 201.9L492.3 325.6" stroke="black" strokeWidth="4" stroke-miterlimit="10"/>
+<path id="Vector_54" d="M137.3 201.9L189.1 325.6" stroke="black" strokeWidth="4" stroke-miterlimit="10"/>
 </g>
 <g id="chair fabric">
 <path id="Vector_55" d="M235.9 397.5L216.8 357.1" stroke="black" stroke-miterlimit="10"/>
@@ -170,7 +170,7 @@
 <path id="XMLID 6" d="M224.3 357.6L228.1 356V354.5L224.3 355.3" fill="#F2F2F2"/>
 </g>
 <g id="grill">
-<path id="Vector_66" d="M304.9 276.8H324.9C324.9 273.6 322.3 270.9 319 270.9H310.8C307.5 270.9 304.9 273.5 304.9 276.8Z" stroke="black" stroke-width="3" stroke-miterlimit="10"/>
+<path id="Vector_66" d="M304.9 276.8H324.9C324.9 273.6 322.3 270.9 319 270.9H310.8C307.5 270.9 304.9 273.5 304.9 276.8Z" stroke="black" strokeWidth="3" stroke-miterlimit="10"/>
 <path id="Vector_67" d="M332.8 276.8H298.1C292.2 276.8 287.4 281.6 287.4 287.5V295.7H343.5V287.5C343.5 281.6 338.7 276.8 332.8 276.8Z" fill="#000827" stroke="black" stroke-miterlimit="10"/>
 <path id="Vector_68" d="M345.1 309.1H285.6C284.7 309.1 283.9 308.3 283.9 307.4V301.5H347V307.3C347 308.3 346.1 309.1 345.1 309.1Z" fill="#000827" stroke="black" stroke-miterlimit="10"/>
 <path id="Vector_69" d="M347 301.4H283.9L287.4 295.7H343.5L347 301.4Z" fill="#BF7B14" stroke="black" stroke-miterlimit="10"/>
