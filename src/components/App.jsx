@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { gql, GraphQLClient } from "graphql-request";
 import {
   BrowserRouter,
   Routes,
@@ -18,8 +17,6 @@ import '../css/styles.css';
 
 import GitHubLight from '../assets/images/icons/GitHub-Mark-Light-64px.png';
 import GitHubDark from '../assets/images/icons/GitHub-Mark-64px.png';
-
-let gql_client = new GraphQLClient("https://api.github.com/graphql");
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,52 +70,6 @@ export default function App() {
       setRepos(ownRepos);
       setIsLoading(false);
     });
-  }, []);
-
-  const fetchPinnedRepos = useCallback(async () => {
-    const query = gql`
-      {
-        user(login: "cayb0rg") {
-          pinnedItems(first: 6, types: REPOSITORY) {
-            nodes {
-              ... on Repository {
-                name
-                url
-                stargazerCount
-                primaryLanguage {
-                  name
-                  color
-                  id
-                }
-                description
-                createdAt
-                forkCount
-                homepageUrl
-                id
-                isArchived
-                isFork
-                isInOrganization
-                isTemplate
-                languages(first: 100) {
-                  edges {
-                    node {
-                      name
-                      id
-                      color
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `;
-
-    const response = await gql_client.request(query);
-
-    setRepos(response.user.pinnedItems.nodes);
-    setIsLoading(false);
   }, []);
 
   return (
