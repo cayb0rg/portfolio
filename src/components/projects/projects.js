@@ -152,7 +152,7 @@ const projects = [
     tags: ["web"],
     year: "2022",
     description: "This website was made using React.js, HTML, and CSS and statically hosted on a Digital Ocean droplet using Vite. I wanted to create a portfolio that was both fun and informative. I also wanted to experiment with different design elements, drag-and-drop functionalities, and CSS animations.",
-    url: "https://greml.ing",
+    url: "https://cay.sh",
     github: "https://github.com/cayb0rg/portfolio",
     images: [],
     nextProject: "tranquest-cloud"
@@ -178,7 +178,7 @@ const projects = [
     tags: ["web"],
     year: "2020",
     description: "A simple to do list I made using MongoDB Community Server, Node.js, Pug, HTML, and CSS as a way to learn the model-view-controller architecture as well as user registration and login. I designed the homepage in Adobe Illustrator and animated it using GSAP, HTML, and CSS. Implementing the fireflies was a challenging but enlightening experience.",
-    url: "https://todo.greml.ing",
+    url: "https://todo.cay.sh",
     github: "https://github.com/cayb0rg/to-do-list",
     images: [
       toDoList640
@@ -206,7 +206,7 @@ const projects = [
     tags: ["web"],
     year: "2019",
     description: "This project was made using JavaScript, HTML, and CSS. Users can choose to play against the computer or another player locally. The computer has an easy and impossible mode, the latter of which uses the minimax algorithm to determine the best move.",
-    url: "https://tictactoe.greml.ing",
+    url: "https://tictactoe.cay.sh",
     github: "https://github.com/cayb0rg/tic-tac-toe",
     images: [
       ticTacToe640

@@ -22,7 +22,7 @@ export default function Header(props) {
     <header>
       <div>
         <a href="/" tabIndex="0">
-          <h1>GREML.ING</h1>
+          <h1>cay.sh</h1>
         </a>
       </div>
       <div className="tools">
