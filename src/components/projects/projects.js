@@ -117,7 +117,7 @@ const projects = [
     technologies: ["Unity", "C#"],
     tags: ["games"],
     year: "2023",
-    description: "Learn more about Pop Up Platformer on Devpost! https://devpost.com/software/pop-up-platformer",
+    description: "Learn more about Pop Up Platformer on Devpost! See links below.",
     images: [],
     url: "https://devpost.com/software/pop-up-platformer",
     github: "https://github.com/cayb0rg/projection-platformer",

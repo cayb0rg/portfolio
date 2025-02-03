@@ -1,0 +1,38 @@
+@import './src/css/styles.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  body {
+    background-color: rgb(var(--bg-color, 255 255 255));
+    color: rgb(var(--pri-color, 0 0 0));
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'League Spartan', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  html[data-theme='light'] {
+    --bg-color: 230 230 230;
+    --pri-color: 50 50 50;
+  }
+
+  html[data-theme='dark'] {
+    --bg-color: 50 50 50;
+    --pri-color: 230 230 230;
+  }
+
+  html[data-theme='pink'] {
+    --bg-color: 255 192 203;
+    --pri-color: 50 50 50;
+  }
+}
