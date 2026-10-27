@@ -9,19 +9,29 @@
   "author": "Cay Henning",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@vitejs/plugin-react": "^4.2.1",
-    "async": "^3.2.4",
-    "axios": "^1.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
-    "three": "^0.166.1",
-    "vite": "^5.2.11"
+    "@fortawesome/react-fontawesome": "^3.5.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "async": "^3.2.6",
+    "axios": "^1.20.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4",
+    "three": "^0.186.1",
+    "vite": "^8.3.5"
   },
   "devDependencies": {
-    "@axe-core/react": "^4.7.3",
-    "axe-core": "^4.7.2"
+    "@axe-core/react": "^4.14.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "autoprefixer": "^10.6.1",
+    "axe-core": "^4.14.0",
+    "tailwindcss": "^4.3.3"
   },
-  "type": "module"
+  "type": "module",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.12.1",
+      "onFail": "download"
+    }
+  }
 }
